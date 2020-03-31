@@ -1,5 +1,4 @@
 # AutoGalleryManager
-A sample App with BEKMultiCellTable + CoreData
 
 Architecture: MVVMC + The Clean Architecture
 
