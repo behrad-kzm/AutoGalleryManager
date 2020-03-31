@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public struct SellerModel {
+public struct SellerDomainModel {
 	public let id: String?
 	public let carName: String
 	public let creationDate: Date
@@ -16,7 +16,7 @@ public struct SellerModel {
 	public let phoneNumber: String
 	public let price: String
 	public let userName: String
-	public let yearModel: String
+	public let yearModel: Int16
 	public let isAutomatic: Bool
 	public let brandName: String
 	
@@ -28,7 +28,7 @@ public struct SellerModel {
 							phoneNumber: String,
 							price: String,
 							userName: String,
-							yearModel: String,
+							yearModel: Int16,
 							isAutomatic: Bool,
 							brandName: String) {
 		self.id = id

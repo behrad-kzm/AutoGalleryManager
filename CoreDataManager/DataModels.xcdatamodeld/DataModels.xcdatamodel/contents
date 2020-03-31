@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CustomerModel" representedClassName="CustomerModel" syncable="YES" codeGenerationType="class">
+    <entity name="CustomerModel" representedClassName="CustomerModel" syncable="YES">
         <attribute name="bodyColored" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="carName" optional="YES" attributeType="String"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -8,10 +8,11 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="priceRange" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
-        <attribute name="year" optional="YES" attributeType="Decimal" defaultValueString="0"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="SellerModel" representedClassName="SellerModel" syncable="YES" codeGenerationType="class">
+    <entity name="SellerModel" representedClassName="SellerModel" syncable="YES">
         <attribute name="bodyColored" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="brandName" optional="YES" attributeType="String"/>
         <attribute name="carName" optional="YES" attributeType="String"/>
@@ -22,11 +23,12 @@
         <attribute name="isAutomatic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
-        <attribute name="yearModel" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="yearModel" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="178"/>
-        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="223"/>
+        <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="238"/>
     </elements>
 </model>

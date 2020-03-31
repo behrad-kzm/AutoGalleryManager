@@ -16,13 +16,15 @@
 		131C7AD22430F79800782708 /* DataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AD02430F79800782708 /* DataModels.xcdatamodeld */; };
 		131C7AD32430F79800782708 /* DataModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AD02430F79800782708 /* DataModels.xcdatamodeld */; };
 		131C7AD62430FC0D00782708 /* CustomerDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AD52430FC0D00782708 /* CustomerDomainModel.swift */; };
-		131C7AD82430FC1900782708 /* SellerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AD72430FC1900782708 /* SellerModel.swift */; };
+		131C7AD82430FC1900782708 /* SellerDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AD72430FC1900782708 /* SellerDomainModel.swift */; };
 		131C7ADB2430FD9E00782708 /* SasCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7ADA2430FD9E00782708 /* SasCoreData.swift */; };
 		131C7ADD2430FDD800782708 /* CoreUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7ADC2430FDD800782708 /* CoreUtils.swift */; };
 		131C7ADF2430FE1C00782708 /* DataBaseErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7ADE2430FE1C00782708 /* DataBaseErrorType.swift */; };
 		131C7AE12430FEA200782708 /* BodyColoredType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AE02430FEA200782708 /* BodyColoredType.swift */; };
 		131C7AE3243100CB00782708 /* CustomerModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AE2243100CB00782708 /* CustomerModel+CoreDataClass.swift */; };
 		131C7AE5243100F600782708 /* CustomerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131C7AE4243100F600782708 /* CustomerModel+CoreDataProperties.swift */; };
+		1333DAF82433A2A100D8D98D /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 131C7AC224309F2E00782708 /* Domain.framework */; };
+		1333DAF92433A2A100D8D98D /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 131C7AC224309F2E00782708 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13BFA454242F7000006B726A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA453242F7000006B726A /* AppDelegate.swift */; };
 		13BFA460242F700D006B726A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BFA45F242F700D006B726A /* Assets.xcassets */; };
 		13BFA485242F7143006B726A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA482242F7142006B726A /* SplashViewController.swift */; };
@@ -59,6 +61,9 @@
 		13BFA4EE242F7FD6006B726A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA4DB242F7754006B726A /* Constants.swift */; };
 		13BFA4EF242F8310006B726A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BFA4DC242F7785006B726A /* LaunchScreen.storyboard */; };
 		13BFA4F1242F89EE006B726A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA4F0242F89ED006B726A /* SceneDelegate.swift */; };
+		13C2D3B92433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3B82433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift */; };
+		13C2D3BB2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3BA2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift */; };
+		13C2D3BD2433F63200BC6A8B /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3BC2433F63200BC6A8B /* DataBaseManager.swift */; };
 		2E798E91CC61A243751BD9FA /* libPods-AutoGalleryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +76,13 @@
 			remoteInfo = CoreDataManager;
 		};
 		131C7AC724309F2E00782708 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13BFA448242F7000006B726A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 131C7AC124309F2E00782708;
+			remoteInfo = Domain;
+		};
+		1333DAFA2433A2A100D8D98D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 13BFA448242F7000006B726A /* Project object */;
 			proxyType = 1;
@@ -92,6 +104,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1333DAFC2433A2A100D8D98D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1333DAF92433A2A100D8D98D /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +126,7 @@
 		131C7AC524309F2E00782708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		131C7AD12430F79800782708 /* DataModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModels.xcdatamodel; sourceTree = "<group>"; };
 		131C7AD52430FC0D00782708 /* CustomerDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDomainModel.swift; sourceTree = "<group>"; };
-		131C7AD72430FC1900782708 /* SellerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerModel.swift; sourceTree = "<group>"; };
+		131C7AD72430FC1900782708 /* SellerDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerDomainModel.swift; sourceTree = "<group>"; };
 		131C7ADA2430FD9E00782708 /* SasCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SasCoreData.swift; sourceTree = "<group>"; };
 		131C7ADC2430FDD800782708 /* CoreUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreUtils.swift; sourceTree = "<group>"; };
 		131C7ADE2430FE1C00782708 /* DataBaseErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseErrorType.swift; sourceTree = "<group>"; };
@@ -148,6 +171,9 @@
 		13BFA4E4242F7944006B726A /* CustomersNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersNavigator.swift; sourceTree = "<group>"; };
 		13BFA4E8242F7DC1006B726A /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		13BFA4F0242F89ED006B726A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		13C2D3B82433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SellerModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		13C2D3BA2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SellerModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13C2D3BC2433F63200BC6A8B /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		47C62AA15C897B4EE23280BD /* Pods-AutoGalleryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.debug.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.debug.xcconfig"; sourceTree = "<group>"; };
 		A8F8052394E93069D2A723E5 /* Pods-AutoGalleryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.release.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.release.xcconfig"; sourceTree = "<group>"; };
 		C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoGalleryManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1333DAF82433A2A100D8D98D /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +217,7 @@
 				131C7AB324309F1A00782708 /* Info.plist */,
 				131C7AD02430F79800782708 /* DataModels.xcdatamodeld */,
 				131C7ADC2430FDD800782708 /* CoreUtils.swift */,
+				13C2D3BC2433F63200BC6A8B /* DataBaseManager.swift */,
 			);
 			path = CoreDataManager;
 			sourceTree = "<group>";
@@ -209,7 +237,7 @@
 			children = (
 				131C7ADE2430FE1C00782708 /* DataBaseErrorType.swift */,
 				131C7AD52430FC0D00782708 /* CustomerDomainModel.swift */,
-				131C7AD72430FC1900782708 /* SellerModel.swift */,
+				131C7AD72430FC1900782708 /* SellerDomainModel.swift */,
 				131C7AE02430FEA200782708 /* BodyColoredType.swift */,
 			);
 			path = Models;
@@ -220,6 +248,8 @@
 			children = (
 				131C7AE2243100CB00782708 /* CustomerModel+CoreDataClass.swift */,
 				131C7AE4243100F600782708 /* CustomerModel+CoreDataProperties.swift */,
+				13C2D3B82433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift */,
+				13C2D3BA2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -465,10 +495,12 @@
 				131C7AAC24309F1A00782708 /* Sources */,
 				131C7AAD24309F1A00782708 /* Frameworks */,
 				131C7AAE24309F1A00782708 /* Resources */,
+				1333DAFC2433A2A100D8D98D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1333DAFB2433A2A100D8D98D /* PBXTargetDependency */,
 			);
 			name = CoreDataManager;
 			productName = CoreDataManager;
@@ -622,11 +654,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C2D3BD2433F63200BC6A8B /* DataBaseManager.swift in Sources */,
 				131C7ADB2430FD9E00782708 /* SasCoreData.swift in Sources */,
 				131C7AE5243100F600782708 /* CustomerModel+CoreDataProperties.swift in Sources */,
+				13C2D3B92433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift in Sources */,
 				131C7AE3243100CB00782708 /* CustomerModel+CoreDataClass.swift in Sources */,
 				131C7ADD2430FDD800782708 /* CoreUtils.swift in Sources */,
 				131C7AD32430F79800782708 /* DataModels.xcdatamodeld in Sources */,
+				13C2D3BB2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131C7AE12430FEA200782708 /* BodyColoredType.swift in Sources */,
-				131C7AD82430FC1900782708 /* SellerModel.swift in Sources */,
+				131C7AD82430FC1900782708 /* SellerDomainModel.swift in Sources */,
 				131C7ADF2430FE1C00782708 /* DataBaseErrorType.swift in Sources */,
 				131C7AD62430FC0D00782708 /* CustomerDomainModel.swift in Sources */,
 			);
@@ -686,6 +721,11 @@
 			target = 131C7AC124309F2E00782708 /* Domain */;
 			targetProxy = 131C7AC724309F2E00782708 /* PBXContainerItemProxy */;
 		};
+		1333DAFB2433A2A100D8D98D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 131C7AC124309F2E00782708 /* Domain */;
+			targetProxy = 1333DAFA2433A2A100D8D98D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -695,7 +735,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 32SKEMQWAM;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -709,6 +749,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.AutoGalleryManager.CoreDataManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -722,7 +763,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 32SKEMQWAM;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -736,6 +777,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.AutoGalleryManager.CoreDataManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -750,7 +792,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 32SKEMQWAM;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -779,7 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 32SKEMQWAM;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -942,7 +984,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T8SK3EL35Q;
+				DEVELOPMENT_TEAM = 32SKEMQWAM;
 				INFOPLIST_FILE = AutoGalleryManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

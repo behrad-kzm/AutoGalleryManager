@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(NotificationLog)
+@objc(CustomerModel)
 public class CustomerModel: NSManagedObject {
 
 }

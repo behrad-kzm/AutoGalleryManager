@@ -16,7 +16,7 @@ public struct CustomerDomainModel {
 	public let phoneNumber: String
 	public let priceRange: String
 	public let userName: String
-	public let year: String
+	public let year: Int16
 	
 	public init(id: String?,
 							carName: String,
@@ -26,7 +26,7 @@ public struct CustomerDomainModel {
 							phoneNumber: String,
 							priceRange: String,
 							userName: String,
-							year: String) {
+							year: Int16) {
 		self.id = id
 		self.carName = carName
 		self.creationDate = creationDate

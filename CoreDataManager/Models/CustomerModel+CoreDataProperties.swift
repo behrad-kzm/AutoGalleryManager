@@ -12,23 +12,24 @@ import Domain
 
 extension CustomerModel {
   
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<NotificationLog> {
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<CustomerModel> {
     return NSFetchRequest<CustomerModel>(entityName: "CustomerModel")
   }
   
   @NSManaged public var title: String?
-  @NSManaged public var body: String?
-  @NSManaged public var fireDate: Date?
-  @NSManaged public var eventId: Int16
-  @NSManaged public var status: Int16
+  @NSManaged public var bodyColored: Int16
+  @NSManaged public var carName: String?
+  @NSManaged public var creationDate: Date
+  @NSManaged public var descriptionText: String?
   @NSManaged public var id: String?
-  @NSManaged public var repeatCount: Int16
+  @NSManaged public var phoneNumber: String?
+	@NSManaged public var priceRange: String?
+	@NSManaged public var userName: String?
+	@NSManaged public var year: Int16
 }
 
 extension CustomerModel {
-  func asDomain() -> NotificationLogModel {
-    assert(true)
-    let eventType = (EventId.init(rawValue: self.eventId) ?? EventId.defaultValue).asEventType()
-    return NotificationLogModel(title: self.title ?? "", body: self.body ?? "", fireDate: self.fireDate ?? Date(), eventId: EventId(rawValue: eventType.asEventProtocol().id) ?? EventId.defaultValue, status: AnswerType(rawValue: self.status) ?? AnswerType.unknown, id: self.id ?? "", repeatCount: self.repeatCount)
+  func asDomain() -> CustomerDomainModel {
+		return CustomerDomainModel(id: id, carName: carName ?? "", creationDate: creationDate, descriptionText: descriptionText ?? "", bodyColored: BodyColoredType(rawValue: bodyColored) ?? .unknown, phoneNumber: phoneNumber ?? "", priceRange: priceRange ?? "", userName: userName ?? "", year: year)
   }
 }
