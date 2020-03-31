@@ -1,0 +1,6 @@
+module Pods_AutoGalleryManager {
+  umbrella header "Pods-AutoGalleryManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  AutoGalleryManager
+
+  Created by Behrad Kazemi on 3/28/20.
+  Copyright © 2020 Behrad Kazemi. All rights reserved.
+*/
+
+//MARK: - Titles
+"Tab_1_Title" = "مشتری ها";
+"Tab_2_Title" = "فروشندگان";
+
+//MARK: - Buttons
+"OK" = "باشه";
+
+//MARK: - Errors
+"UnknownError" = "خطایی رخ داده است";
+"AnErrorOccured" = "مشکلی پیش آمده است";
+"ConnectionProblem" = "خطای شبکه";

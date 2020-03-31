@@ -1,0 +1,36 @@
+PODS:
+  - BEKMultiCellTable (1.0.0)
+  - Hero (1.5.0)
+  - Stellar (0.67)
+
+DEPENDENCIES:
+  - BEKMultiCellTable (from `https://github.com/behrad-kzm/BEKMultiCellTable.git`)
+  - Hero
+  - Stellar (from `https://github.com/AugustRush/Stellar.git`)
+
+SPEC REPOS:
+  trunk:
+    - Hero
+
+EXTERNAL SOURCES:
+  BEKMultiCellTable:
+    :git: https://github.com/behrad-kzm/BEKMultiCellTable.git
+  Stellar:
+    :git: https://github.com/AugustRush/Stellar.git
+
+CHECKOUT OPTIONS:
+  BEKMultiCellTable:
+    :commit: c327552a8eea86fb87bad7f0c7d40059a00583b2
+    :git: https://github.com/behrad-kzm/BEKMultiCellTable.git
+  Stellar:
+    :commit: 6c192427621f8b52f3b155d0088e1eabd156abe0
+    :git: https://github.com/AugustRush/Stellar.git
+
+SPEC CHECKSUMS:
+  BEKMultiCellTable: d265218c22d9cfcdbc6632ae52348ec6b8580663
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Stellar: df980becd194eeb62d623af097582da0ef2219b9
+
+PODFILE CHECKSUM: 84057d821d9f02d43ed609766935bd0f14d165f6
+
+COCOAPODS: 1.9.1
