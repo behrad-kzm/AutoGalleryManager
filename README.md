@@ -2,6 +2,7 @@
 A sample App with BEKMultiCellTable + CoreData
 
 Architecture: MVVMC + The Clean Architecture
+
 iOS: 13.0+
 
 BEKMultiCellTable:
