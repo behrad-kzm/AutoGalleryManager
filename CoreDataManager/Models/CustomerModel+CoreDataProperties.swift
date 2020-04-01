@@ -30,6 +30,6 @@ extension CustomerModel {
 
 extension CustomerModel {
   func asDomain() -> CustomerDomainModel {
-		return CustomerDomainModel(id: id, carName: carName ?? "", creationDate: creationDate, descriptionText: descriptionText ?? "", bodyColored: BodyColoredType(rawValue: bodyColored) ?? .unknown, phoneNumber: phoneNumber ?? "", priceRange: priceRange ?? "", userName: userName ?? "", year: year)
+		return CustomerDomainModel(id: id, title: title ?? "", carName: carName ?? "", creationDate: creationDate, descriptionText: descriptionText ?? "", bodyColored: BodyColoredType(rawValue: bodyColored) ?? .unknown, phoneNumber: phoneNumber ?? "", priceRange: priceRange ?? "", userName: userName ?? "", year: year)
   }
 }

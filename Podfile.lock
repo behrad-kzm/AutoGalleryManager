@@ -2,6 +2,7 @@ PODS:
   - BEKMultiCellTable (1.0.0)
   - Hero (1.5.0)
   - IQKeyboardManagerSwift (6.5.5)
+  - MHSoftUI (0.1.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - BEKMultiCellTable (from `https://github.com/behrad-kzm/BEKMultiCellTable.git`)
   - Hero
   - IQKeyboardManagerSwift
+  - MHSoftUI
   - RxCocoa
   - RxSwift
   - Stellar (from `https://github.com/AugustRush/Stellar.git`)
@@ -22,6 +24,7 @@ SPEC REPOS:
   trunk:
     - Hero
     - IQKeyboardManagerSwift
+    - MHSoftUI
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -44,11 +47,12 @@ SPEC CHECKSUMS:
   BEKMultiCellTable: d265218c22d9cfcdbc6632ae52348ec6b8580663
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  MHSoftUI: efa0704cbc30d118bbede29f19c35efeb0c8f4c3
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   Stellar: df980becd194eeb62d623af097582da0ef2219b9
 
-PODFILE CHECKSUM: a0f6114e9167dd15e208f1aef4f2f7654d523267
+PODFILE CHECKSUM: f21dccc9dd048b6f884b5f50e65016766c1d1e84
 
 COCOAPODS: 1.9.1

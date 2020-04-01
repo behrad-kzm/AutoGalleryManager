@@ -11,7 +11,7 @@ import UIKit
 
 final class SellersNavigator: Navigator {
 	func setup() -> UIViewController {
-		let controller = SellersController(nibName: "SellersController", bundle: nil)
+		let controller = UIViewController()
 		
 		navigationController.viewControllers = [controller]
 		return controller

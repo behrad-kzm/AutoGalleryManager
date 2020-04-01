@@ -1,0 +1,6 @@
+module MHSoftUI {
+  umbrella header "MHSoftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

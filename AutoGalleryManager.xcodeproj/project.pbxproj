@@ -75,6 +75,13 @@
 		13C2D3DB2434BEAC00BC6A8B /* IRANSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3D62434BDA200BC6A8B /* IRANSans.ttf */; };
 		13C2D3E72434DD2700BC6A8B /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3E52434DD2700BC6A8B /* DetailsController.swift */; };
 		13C2D3E82434DD2700BC6A8B /* DetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3E62434DD2700BC6A8B /* DetailsController.xib */; };
+		13C2D3EA2434EC6D00BC6A8B /* LandingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3E92434EC6D00BC6A8B /* LandingNavigator.swift */; };
+		13C2D3ED2434FAD700BC6A8B /* ContactInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3EB2434FAD700BC6A8B /* ContactInfoCell.swift */; };
+		13C2D3EE2434FAD700BC6A8B /* ContactInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3EC2434FAD700BC6A8B /* ContactInfoCell.xib */; };
+		13C2D3F02434FAED00BC6A8B /* ContactVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3EF2434FAED00BC6A8B /* ContactVM.swift */; };
+		13C2D3F524352B0D00BC6A8B /* CommonInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3F324352B0D00BC6A8B /* CommonInfoCell.swift */; };
+		13C2D3F624352B0D00BC6A8B /* CommonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3F424352B0D00BC6A8B /* CommonInfoCell.xib */; };
+		13C2D3F824352C7700BC6A8B /* CommonInfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3F724352C7700BC6A8B /* CommonInfoVM.swift */; };
 		2E798E91CC61A243751BD9FA /* libPods-AutoGalleryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +203,13 @@
 		13C2D3D62434BDA200BC6A8B /* IRANSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans.ttf; sourceTree = "<group>"; };
 		13C2D3E52434DD2700BC6A8B /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		13C2D3E62434DD2700BC6A8B /* DetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsController.xib; sourceTree = "<group>"; };
+		13C2D3E92434EC6D00BC6A8B /* LandingNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingNavigator.swift; sourceTree = "<group>"; };
+		13C2D3EB2434FAD700BC6A8B /* ContactInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoCell.swift; sourceTree = "<group>"; };
+		13C2D3EC2434FAD700BC6A8B /* ContactInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactInfoCell.xib; sourceTree = "<group>"; };
+		13C2D3EF2434FAED00BC6A8B /* ContactVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVM.swift; sourceTree = "<group>"; };
+		13C2D3F324352B0D00BC6A8B /* CommonInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInfoCell.swift; sourceTree = "<group>"; };
+		13C2D3F424352B0D00BC6A8B /* CommonInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInfoCell.xib; sourceTree = "<group>"; };
+		13C2D3F724352C7700BC6A8B /* CommonInfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInfoVM.swift; sourceTree = "<group>"; };
 		47C62AA15C897B4EE23280BD /* Pods-AutoGalleryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.debug.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.debug.xcconfig"; sourceTree = "<group>"; };
 		A8F8052394E93069D2A723E5 /* Pods-AutoGalleryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.release.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.release.xcconfig"; sourceTree = "<group>"; };
 		C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoGalleryManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,6 +493,7 @@
 				13C2D3C8243498BC00BC6A8B /* LandingListController.xib */,
 				13C2D3CB24349B3700BC6A8B /* TitleCell.swift */,
 				13C2D3CC24349B3700BC6A8B /* TitleCell.xib */,
+				13C2D3E92434EC6D00BC6A8B /* LandingNavigator.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -507,6 +522,7 @@
 		13C2D3E22434DC8500BC6A8B /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				13C2D3F224352AC800BC6A8B /* CommonInfoCell */,
 				13C2D3E42434DCC700BC6A8B /* SliderComponent */,
 				13C2D3E32434DC9500BC6A8B /* ContactInfoComponent */,
 				13C2D3E52434DD2700BC6A8B /* DetailsController.swift */,
@@ -518,6 +534,9 @@
 		13C2D3E32434DC9500BC6A8B /* ContactInfoComponent */ = {
 			isa = PBXGroup;
 			children = (
+				13C2D3EB2434FAD700BC6A8B /* ContactInfoCell.swift */,
+				13C2D3EC2434FAD700BC6A8B /* ContactInfoCell.xib */,
+				13C2D3EF2434FAED00BC6A8B /* ContactVM.swift */,
 			);
 			path = ContactInfoComponent;
 			sourceTree = "<group>";
@@ -527,6 +546,16 @@
 			children = (
 			);
 			path = SliderComponent;
+			sourceTree = "<group>";
+		};
+		13C2D3F224352AC800BC6A8B /* CommonInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				13C2D3F324352B0D00BC6A8B /* CommonInfoCell.swift */,
+				13C2D3F424352B0D00BC6A8B /* CommonInfoCell.xib */,
+				13C2D3F724352C7700BC6A8B /* CommonInfoVM.swift */,
+			);
+			path = CommonInfoCell;
 			sourceTree = "<group>";
 		};
 		5126BAB54F004B96A50F14FE /* Frameworks */ = {
@@ -698,7 +727,9 @@
 				13BFA4DE242F7836006B726A /* Localizable.strings in Resources */,
 				13C2D3DA2434BEAC00BC6A8B /* IRANSans_UltraLight.ttf in Resources */,
 				13BFA493242F717A006B726A /* PopUpCoverViewController.xib in Resources */,
+				13C2D3EE2434FAD700BC6A8B /* ContactInfoCell.xib in Resources */,
 				13C2D3E82434DD2700BC6A8B /* DetailsController.xib in Resources */,
+				13C2D3F624352B0D00BC6A8B /* CommonInfoCell.xib in Resources */,
 				13BFA4C1242F7301006B726A /* AddNewSeller.xib in Resources */,
 				13BFA4EF242F8310006B726A /* LaunchScreen.storyboard in Resources */,
 				13C2D3DB2434BEAC00BC6A8B /* IRANSans.ttf in Resources */,
@@ -775,7 +806,9 @@
 				13BFA495242F717A006B726A /* Error+PopUpCover.swift in Sources */,
 				13BFA4EE242F7FD6006B726A /* Constants.swift in Sources */,
 				13BFA4E3242F7929006B726A /* SellersNavigator.swift in Sources */,
+				13C2D3ED2434FAD700BC6A8B /* ContactInfoCell.swift in Sources */,
 				13BFA48B242F716B006B726A /* MainNavigationController.swift in Sources */,
+				13C2D3F02434FAED00BC6A8B /* ContactVM.swift in Sources */,
 				13BFA494242F717A006B726A /* PopUpCoverViewModel.swift in Sources */,
 				13BFA4CF242F74E8006B726A /* SellerAdViewModel.swift in Sources */,
 				13C2D3CD24349B3700BC6A8B /* TitleCell.swift in Sources */,
@@ -786,6 +819,7 @@
 				13BFA48C242F716B006B726A /* Navigator.swift in Sources */,
 				13BFA4CC242F74CA006B726A /* CustomerAdViewModel.swift in Sources */,
 				13C2D3D02434A6C100BC6A8B /* Extensions.swift in Sources */,
+				13C2D3EA2434EC6D00BC6A8B /* LandingNavigator.swift in Sources */,
 				13C2D3BF2433FAFF00BC6A8B /* UIViewExtensions.swift in Sources */,
 				13BFA492242F717A006B726A /* PopUpCoverViewController.swift in Sources */,
 				13BFA4EA242F7FC9006B726A /* AppSoundEffects.swift in Sources */,
@@ -794,6 +828,8 @@
 				13C2D3C324348DF200BC6A8B /* AdvertiseDynamicType.swift in Sources */,
 				13BFA485242F7143006B726A /* SplashViewController.swift in Sources */,
 				13C2D3E72434DD2700BC6A8B /* DetailsController.swift in Sources */,
+				13C2D3F824352C7700BC6A8B /* CommonInfoVM.swift in Sources */,
+				13C2D3F524352B0D00BC6A8B /* CommonInfoCell.swift in Sources */,
 				13BFA4D4242F7533006B726A /* AdvertiseCell.swift in Sources */,
 				13BFA4E5242F7944006B726A /* CustomersNavigator.swift in Sources */,
 				131C7AD22430F79800782708 /* DataModels.xcdatamodeld in Sources */,

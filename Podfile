@@ -10,6 +10,7 @@ pod 'RxSwift'
 	pod 'Stellar', :git => 'https://github.com/AugustRush/Stellar.git'
 	pod 'BEKMultiCellTable', :git => 'https://github.com/behrad-kzm/BEKMultiCellTable.git'
 	pod 'IQKeyboardManagerSwift'
+	pod 'MHSoftUI'
   # Pods for AutoGalleryManager
 
 end

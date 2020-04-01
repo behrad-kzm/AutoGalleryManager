@@ -11,9 +11,9 @@ import Domain
 struct CustomerAdViewModel {
 	let model: CustomerDomainModel
 	let title: String
-	let brandName: String
 	let carName: String
-	let color: String
+	let date: String
+	let priceRange: String
 	let bodyColored: String
 	let yearModel: String
 	let descriptionText: String
@@ -21,22 +21,21 @@ struct CustomerAdViewModel {
 	let phoneNumber: String
 }
 
-extension CustomerAdViewModel {
-	func asViewModel() -> SellerAdViewModel {
-		let yearString = "Model".localize() + " \(yearModel)"
-		let priceString = "\(price) " + "Million".localize()
-		let titleText = title.isEmpty ? "\(brandName) \(carName) \(bodyColored.getTitle()) \(color) \(yearString)" : title
-		return SellerAdViewModel(model: self, title: titleText, brandName: brandName, carName: carName, price: priceString, color: color, gearBoxType: isAutomatic ? "Automatic".localize() : "Manual".localize(), bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, userName: userName, phoneNumber: phoneNumber)
+extension CustomerDomainModel {
+	func asViewModel() -> CustomerAdViewModel {
+		let yearString = "Model".localize() + " \(year)"
+		let priceString = "\(priceRange) " + "Million".localize()
+		let dateString = "تستس دیروز"
+		let titleText = title.isEmpty ? "\(carName) \(bodyColored.getTitle()) \(yearString)" : title
+		return CustomerAdViewModel(model: self, title: titleText, carName: carName, date: dateString, priceRange: priceString, bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, userName: userName, phoneNumber: phoneNumber)
 	}
 }
 
 extension CustomerAdViewModel: AdvertiseConvertable {
 	func asAdvertiseViewModel() -> AdvertiseViewModel {
-		let title = "Customer"
-		let imageName = "placeholder"
-		let subtitle = "String"
-		let price = "1900"
-		return AdvertiseViewModel(title: title, imageName: imageName, subtitle: subtitle, price: price)
+		let imageName = "Placeholder"
+		let subtitle = "\(userName) "
+		return AdvertiseViewModel(title: title, imageName: imageName, subtitle: subtitle, price: priceRange)
 	}
 	
 	func asType() -> AdvertiseViewModelType {

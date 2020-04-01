@@ -12,7 +12,7 @@ import UIKit
 
 final class CustomersNavigator: Navigator {
 	func setup() -> UIViewController {
-		let controller = CustomersController(nibName: "CustomersController", bundle: nil)
+		let controller = UIViewController()
 		navigationController.viewControllers = [controller]
 		return controller
 	}

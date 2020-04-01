@@ -60,9 +60,16 @@ extension Array where Element == SellerAdViewModel {
 }
 extension Array where Element == CustomerAdViewModel {
 	func filter(byKey key: String) -> [CustomerAdViewModel] {
-//		if key.isEmpty {
+		if key.isEmpty {
 			return self
-//		}
-		
+		}
+		return filter { (item) -> Bool in
+			let title = item.title.contains(key)
+			let bodyColored = item.bodyColored.contains(key)
+			let carName = item.carName.contains(key)
+			let userName = item.userName.contains(key)
+			let yearModel = item.yearModel.contains(key)
+			return title || bodyColored || carName || userName || yearModel
+		}
 	}
 }

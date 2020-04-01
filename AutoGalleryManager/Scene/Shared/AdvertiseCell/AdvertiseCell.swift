@@ -8,6 +8,7 @@
 
 import UIKit
 import BEKMultiCellTable
+
 class AdvertiseCell: UITableViewCell {
 	
 	@IBOutlet weak var titleLabel: UILabel!
@@ -27,10 +28,10 @@ class AdvertiseCell: UITableViewCell {
 		imageTitle.clipsToBounds = true
 		
 		shadowBackgroundView.dropShadow(color: .black, opacity: 0.2, offSet: .zero, radius: 4, cornerRadius: 8)
+		
 		titleLabel.font = UIFont.getBoldFont(size: 16)
 		detailLabel.font = UIFont.getRegularFont(size: 13)
 		priceLabel.font = UIFont.getRegularFont(size: 12)
-		
 		// Initialization code
 	}
 	
@@ -45,7 +46,7 @@ extension AdvertiseCell: BEKBindableCell {
     typealias ViewModeltype = AdvertiseViewModelType
     func bindData(withViewModel viewModel: AdvertiseViewModelType) {
 			vm = viewModel
-			priceLabel.textColor = (vm.flat() == .seller) ? .red : .green
+			priceLabel.textColor = (vm.flat() == .seller) ? .red : .systemGreen
 			let adViewModel = vm.asViewModel()
 			titleLabel.text = adViewModel.title
 			detailLabel.text = adViewModel.subtitle

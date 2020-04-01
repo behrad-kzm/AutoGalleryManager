@@ -10,7 +10,7 @@ import UIKit
 import BEKMultiCellTable
 
 class TitleCell: UITableViewCell {
-	@IBOutlet weak var iconImageView: UIImageView!
+
 	@IBOutlet weak var titleLabel: UILabel!
 	var title = ""
 	override func awakeFromNib() {
@@ -20,8 +20,7 @@ class TitleCell: UITableViewCell {
 	
 	override func setSelected(_ selected: Bool, animated: Bool) {
 		super.setSelected(selected, animated: animated)
-		iconImageView.layer.cornerRadius = iconImageView.bounds.width / 2
-		
+		titleLabel.font = UIFont.getBoldFont(size: 18)
 		// Configure the view for the selected state
 	}
 	
@@ -32,6 +31,5 @@ extension TitleCell: BEKBindableCell {
 	func bindData(withViewModel viewModel: String) {
 		title = viewModel
 		titleLabel.text = title
-		iconImageView.image = UIImage(named: title)
 	}
 }

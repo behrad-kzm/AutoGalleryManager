@@ -26,6 +26,14 @@ enum AdvertiseViewModelType {
 			return .customer
 		}
 	}
+	func asAdvertiseConvertable() -> AdvertiseConvertable {
+		switch self {
+		case let .seller(item):
+			return item
+		case let .customer(item):
+			return item
+		}
+	}
 }
 enum AdvertiseFlatViewModelType {
 	case seller
@@ -33,6 +41,9 @@ enum AdvertiseFlatViewModelType {
 	
 }
 protocol AdvertiseConvertable {
+	var phoneNumber: String { get }
+	var userName: String { get }
+	var title: String { get }
 	func asAdvertiseViewModel() -> AdvertiseViewModel
 	func asType() -> AdvertiseViewModelType
 }

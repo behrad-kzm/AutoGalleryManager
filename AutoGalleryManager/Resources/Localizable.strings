@@ -7,12 +7,19 @@
 */
 
 //MARK: - Titles
-"Tab_1_Title" = "مشتری ها";
+"Tab_1_Title" = "درخواست کنندگان";
 "Tab_2_Title" = "فروشندگان";
+"Name" = "نام";
+"Mobile" = "شماره تماس";
 "Automatic" = "اتوماتیک";
 "Manual" = "دنده ای";
 "Model" = "مدل";
+"ContactInfo" = "مشخصات کاربر";
 "Million" = "میلیون تومان";
+"CallWith" = "تماس با";
+"Back" = "بازگشت";
+
+//MARK: - BodyColor
 "complete_BodyColor" = "تمام رنگ";
 "single_BodyColor" = "یک لکه";
 "two_BodyColor" = "دو لکه";
@@ -20,6 +27,7 @@
 "over_BodyColor" = "دور رنگ";
 "no_BodyColor" = "بی رنگ";
 "unknown_BodyColor" = "نیاز به بررسی";
+
 //MARK: - Buttons
 "OK" = "باشه";
 
@@ -28,3 +36,14 @@
 "AnErrorOccured" = "مشکلی پیش آمده است";
 "ConnectionProblem" = "خطای شبکه";
 "Empty" = "پیغامی برای نمایش وجود ندارد.";
+
+//MARK: - Errors
+"Brand_Title" = "برند";
+"CarName_Title" = "مدل";
+"Year_Title" = "سال ساخت";
+"Color_Title" = "رنگ";
+"BodyColor_Title" = "وضعیت بدنه";
+"Automatic_Title" = "گیربکس";
+"Price_Title" = "قیمت";
+"Description_Title" = "توضیحات";
+"Date_Title" = "تاریخ ثبت";

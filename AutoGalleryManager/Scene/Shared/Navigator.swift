@@ -16,10 +16,10 @@ class Navigator: NSObject {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+	
 	func toTabbar(withDefaultPresentedController handler: ((UIViewController) -> Void)? = nil) {
-		
-		let sellersNavigationController = LandingListController(navigator: self, controllerType: .seller).makeNavigationController()
-		let customersNavigationController = LandingListController(navigator: self, controllerType: .customer).makeNavigationController()
+		let sellersNavigationController = LandingListController(navigator: LandingNavigator(navigationController: navigationController), controllerType: .seller).makeNavigationController()
+		let customersNavigationController = LandingListController(navigator: LandingNavigator(navigationController: navigationController), controllerType: .customer).makeNavigationController()
 		let tabBarViewController = UITabBarController()
 		
 		tabBarViewController.setViewControllers([customersNavigationController, sellersNavigationController], animated: true)		

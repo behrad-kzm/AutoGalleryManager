@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LandingListController" customModule="AutoGalleryManager" customModuleProvider="target">
             <connections>
+                <outlet property="clearImageView" destination="W11-zo-Mj7" id="e6d-es-bft"/>
                 <outlet property="searchContainer" destination="YFg-hR-CPO" id="i5r-Ar-8zK"/>
                 <outlet property="searchTextField" destination="aIy-KQ-ygw" id="ckg-Wz-iuf"/>
                 <outlet property="tableView" destination="fEj-WN-CZc" id="6gg-Gq-Eha"/>
@@ -44,6 +45,9 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwy-gA-HtI">
                                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                    <connections>
+                                                        <action selector="clearSearch:" destination="-1" eventType="touchUpInside" id="pkJ-N4-59J"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

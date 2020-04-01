@@ -9,6 +9,7 @@
 import Foundation
 public struct CustomerDomainModel {
 	public let id: String?
+	public let title: String
 	public let carName: String
 	public let creationDate: Date
 	public let descriptionText: String
@@ -19,6 +20,7 @@ public struct CustomerDomainModel {
 	public let year: Int16
 	
 	public init(id: String?,
+							title: String,
 							carName: String,
 							creationDate: Date,
 							descriptionText: String,
@@ -36,5 +38,6 @@ public struct CustomerDomainModel {
 		self.priceRange = priceRange
 		self.userName = userName
 		self.year = year
+		self.title = title
 	}
 }

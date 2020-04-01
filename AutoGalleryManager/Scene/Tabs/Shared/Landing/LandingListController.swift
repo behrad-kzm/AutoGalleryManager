@@ -16,12 +16,14 @@ class LandingListController: UIViewController {
 	
 	@IBOutlet weak var tableView: BEKMultiCellTable!
 	var controllerType: AdvertiseFlatViewModelType
-	var navigator: Navigator!
+	var navigator: LandingNavigator!
 	
+	@IBOutlet weak var clearImageView: UIImageView!
 	@IBOutlet weak var searchContainer: UIView!
 	@IBOutlet weak var searchTextField: UITextField!
 	let disposeBag = DisposeBag()
-	init(navigator: Navigator, controllerType: AdvertiseFlatViewModelType) {
+	var titleLabel: UILabel!
+	init(navigator: LandingNavigator, controllerType: AdvertiseFlatViewModelType) {
 		self.navigator = navigator
 		self.controllerType = controllerType
 		super.init(nibName: "LandingListController", bundle: nil)
@@ -32,10 +34,11 @@ class LandingListController: UIViewController {
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		tableView.delegate = self
 		searchTextField.font = UIFont.getRegularFont(size: 14)
 		searchTextField.rx.text.subscribe(onNext: { [setupUI](searchKey) in
-				setupUI()
-			}).disposed(by: disposeBag)
+			setupUI()
+		}).disposed(by: disposeBag)
 		tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
 	}
 	func setupUI(){
@@ -44,14 +47,13 @@ class LandingListController: UIViewController {
 		searchContainer.layer.borderWidth = 0.5
 		tableView.removeAll()
 		tableView.rowHeight = 100.0
-		
+		navigationController?.navigationBar.backItem?.title = "Back".localize()
 		switch controllerType {
-			
 		case .seller:
 			loadSellerView(filter: searchTextField.text ?? "")
 			setupNavigationBar(titleText: "Tab_2_Title".localize())
 		default:
-			loadCustomerView()
+			loadCustomerView(filter: searchTextField.text ?? "")
 			setupNavigationBar(titleText: "Tab_1_Title".localize())
 		}
 		
@@ -62,15 +64,21 @@ class LandingListController: UIViewController {
 		setupUI()
 	}
 	
+	@IBAction func clearSearch(_ sender: Any) {
+		searchTextField.text = ""
+		setupUI()
+	}
+	
 	func setupNavigationBar(titleText: String) {
 		navigationItem.title = .none
 		
 		if #available(iOS 11.0, *) {
 			navigationController?.navigationBar.prefersLargeTitles = true
-			self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-			self.navigationController?.navigationBar.shadowImage = UIImage()
-			self.navigationController?.navigationBar.layoutIfNeeded()
-			let titleLabel = UILabel()
+//			self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+//			self.navigationController?.navigationBar.shadowImage = UIImage()
+//			self.navigationController?.navigationBar.layoutIfNeeded()
+			
+			titleLabel = UILabel()
 			titleLabel.text = titleText
 			titleLabel.font = UIFont.getBoldFont(size: 24)
 			titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -117,21 +125,23 @@ extension LandingListController {
 				].compactMap{$0.asViewModel()}.filter(byKey: filter)
 			tableView?.push(cells: models.compactMap{BEKGenericCell<AdvertiseCell>(viewModel: $0.asType())})
 		}
-		
-		
-		
 	}
 	
-	func loadCustomerView() {
-		//		tabBarItem = UITabBarItem(title: "Tab_1_Title".localize(), image: UIImage(named: "Tab_1"), tag: 0)
-		//		DatabaseManager.shared.getCustomers(response: { (items) in
-		//			let viewModels = items.compactMap{$0.asViewModel()}
-		//			tableView?.push(cells: viewModels.compactMap{BEKGenericCell<AdvertiseCell>(viewModel: $0.asType())})
-		//		}) { [navigator](error) in
-		//			navigator?.logError(error: error, navigatorName: "SellerNavigator", message: "AnErrorOccured".localize())
-		//		}
-		//		tableView.push(cell: BEKGenericCell<TitleCell>(viewModel: "Tab_1_Title".localize()))
-		
+	func loadCustomerView(filter: String) {
+		tabBarItem = UITabBarItem(title: "Tab_1_Title".localize(), image: UIImage(named: "Tab_1"), tag: 0)
+		DatabaseManager.shared.getCustomers(response: { [tableView](items) in
+			let viewModels = items.compactMap{$0.asViewModel()}.filter(byKey: filter)
+			tableView?.push(cells: viewModels.compactMap{BEKGenericCell<AdvertiseCell>(viewModel: $0.asType())})
+			
+		}) { (error) in
+			let models = [
+				CustomerDomainModel(id: "Test", title: "", carName: "x3", creationDate: Date(), descriptionText: "فنی سالم پول به صورت چند فقره چک آماده است با زمین هم معاوضه دارد", bodyColored: .singlePiece, phoneNumber: "09125889838", priceRange: "۱۲۰۰ میلیون تومان", userName: "بهراد کاظمی", year: 2018),
+				CustomerDomainModel(id: "Test", title: "", carName: "بورگوارد", creationDate: Date(), descriptionText: "فنی سالم پول به صورت چند فقره چک آماده است با زمین هم معاوضه دارد", bodyColored: .singlePiece, phoneNumber: "09125889838", priceRange: "۸۰۰ میلیون تومان", userName: "آقای مدیری", year: 2019),
+				CustomerDomainModel(id: "Test", title: "", carName: "پاسات", creationDate: Date(), descriptionText: "فنی سالم پول به صورت چند فقره چک آماده است با زمین هم معاوضه دارد", bodyColored: .singlePiece, phoneNumber: "09125889838", priceRange: "۱۲۰۰ میلیون تومان", userName: "حاج منصور", year: 2019),
+				CustomerDomainModel(id: "Test", title: "", carName: "x6", creationDate: Date(), descriptionText: "فنی سالم پول به صورت چند فقره چک آماده است با زمین هم معاوضه دارد", bodyColored: .singlePiece, phoneNumber: "09125889838", priceRange: "۱۹۰۰ میلیون تومان", userName: "بهراد کاظمی", year: 2015)
+				].compactMap{$0.asViewModel()}.filter(byKey: filter)
+						tableView?.push(cells: models.compactMap{BEKGenericCell<AdvertiseCell>(viewModel: $0.asType())})
+		}
 	}
 }
 
@@ -140,6 +150,13 @@ extension BEKMultiCellTable {
 		let count = numberOfRows(inSection: 0)
 		(0..<count).forEach { (_) in
 			remove(cellAtIndex: 0)
+		}
+	}
+}
+extension LandingListController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if let cell = tableView.cellForRow(at: indexPath) as? AdvertiseCell{
+			navigator.toDetails(viewModel: cell.vm)
 		}
 	}
 }
