@@ -37,10 +37,6 @@
 		13BFA494242F717A006B726A /* PopUpCoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA490242F717A006B726A /* PopUpCoverViewModel.swift */; };
 		13BFA495242F717A006B726A /* Error+PopUpCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA491242F717A006B726A /* Error+PopUpCover.swift */; };
 		13BFA498242F71BD006B726A /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA497242F71BD006B726A /* SplashViewModel.swift */; };
-		13BFA49B242F7205006B726A /* CustomersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA499242F7205006B726A /* CustomersController.swift */; };
-		13BFA49C242F7205006B726A /* CustomersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFA49A242F7205006B726A /* CustomersController.xib */; };
-		13BFA49F242F7220006B726A /* SellersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA49D242F7220006B726A /* SellersController.swift */; };
-		13BFA4A0242F7220006B726A /* SellersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFA49E242F7220006B726A /* SellersController.xib */; };
 		13BFA4C0242F7301006B726A /* AddNewSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA4BE242F7301006B726A /* AddNewSeller.swift */; };
 		13BFA4C1242F7301006B726A /* AddNewSeller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13BFA4BF242F7301006B726A /* AddNewSeller.xib */; };
 		13BFA4C4242F7329006B726A /* AddNewCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA4C2242F7329006B726A /* AddNewCustomer.swift */; };
@@ -64,6 +60,21 @@
 		13C2D3B92433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3B82433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift */; };
 		13C2D3BB2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3BA2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift */; };
 		13C2D3BD2433F63200BC6A8B /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3BC2433F63200BC6A8B /* DataBaseManager.swift */; };
+		13C2D3BF2433FAFF00BC6A8B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3BE2433FAFF00BC6A8B /* UIViewExtensions.swift */; };
+		13C2D3C124348AA300BC6A8B /* AdvertiseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3C024348AA300BC6A8B /* AdvertiseViewModel.swift */; };
+		13C2D3C324348DF200BC6A8B /* AdvertiseDynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3C224348DF200BC6A8B /* AdvertiseDynamicType.swift */; };
+		13C2D3C9243498BC00BC6A8B /* LandingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3C7243498BC00BC6A8B /* LandingListController.swift */; };
+		13C2D3CA243498BC00BC6A8B /* LandingListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3C8243498BC00BC6A8B /* LandingListController.xib */; };
+		13C2D3CD24349B3700BC6A8B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3CB24349B3700BC6A8B /* TitleCell.swift */; };
+		13C2D3CE24349B3700BC6A8B /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3CC24349B3700BC6A8B /* TitleCell.xib */; };
+		13C2D3D02434A6C100BC6A8B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3CF2434A6C100BC6A8B /* Extensions.swift */; };
+		13C2D3D72434BEAC00BC6A8B /* IRANSans_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3D22434BD5E00BC6A8B /* IRANSans_Bold.ttf */; };
+		13C2D3D82434BEAC00BC6A8B /* IRANSans_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3D32434BD7B00BC6A8B /* IRANSans_Light.ttf */; };
+		13C2D3D92434BEAC00BC6A8B /* IRANSans_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3D42434BD9A00BC6A8B /* IRANSans_Medium.ttf */; };
+		13C2D3DA2434BEAC00BC6A8B /* IRANSans_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3D52434BDA000BC6A8B /* IRANSans_UltraLight.ttf */; };
+		13C2D3DB2434BEAC00BC6A8B /* IRANSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3D62434BDA200BC6A8B /* IRANSans.ttf */; };
+		13C2D3E72434DD2700BC6A8B /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3E52434DD2700BC6A8B /* DetailsController.swift */; };
+		13C2D3E82434DD2700BC6A8B /* DetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3E62434DD2700BC6A8B /* DetailsController.xib */; };
 		2E798E91CC61A243751BD9FA /* libPods-AutoGalleryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */; };
 /* End PBXBuildFile section */
 
@@ -147,10 +158,6 @@
 		13BFA490242F717A006B726A /* PopUpCoverViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpCoverViewModel.swift; sourceTree = "<group>"; };
 		13BFA491242F717A006B726A /* Error+PopUpCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+PopUpCover.swift"; sourceTree = "<group>"; };
 		13BFA497242F71BD006B726A /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		13BFA499242F7205006B726A /* CustomersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersController.swift; sourceTree = "<group>"; };
-		13BFA49A242F7205006B726A /* CustomersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomersController.xib; sourceTree = "<group>"; };
-		13BFA49D242F7220006B726A /* SellersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellersController.swift; sourceTree = "<group>"; };
-		13BFA49E242F7220006B726A /* SellersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellersController.xib; sourceTree = "<group>"; };
 		13BFA4BE242F7301006B726A /* AddNewSeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewSeller.swift; sourceTree = "<group>"; };
 		13BFA4BF242F7301006B726A /* AddNewSeller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewSeller.xib; sourceTree = "<group>"; };
 		13BFA4C2242F7329006B726A /* AddNewCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCustomer.swift; sourceTree = "<group>"; };
@@ -174,6 +181,21 @@
 		13C2D3B82433F4AB00BC6A8B /* SellerModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SellerModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		13C2D3BA2433F4CA00BC6A8B /* SellerModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SellerModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		13C2D3BC2433F63200BC6A8B /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		13C2D3BE2433FAFF00BC6A8B /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		13C2D3C024348AA300BC6A8B /* AdvertiseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseViewModel.swift; sourceTree = "<group>"; };
+		13C2D3C224348DF200BC6A8B /* AdvertiseDynamicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseDynamicType.swift; sourceTree = "<group>"; };
+		13C2D3C7243498BC00BC6A8B /* LandingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingListController.swift; sourceTree = "<group>"; };
+		13C2D3C8243498BC00BC6A8B /* LandingListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LandingListController.xib; sourceTree = "<group>"; };
+		13C2D3CB24349B3700BC6A8B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		13C2D3CC24349B3700BC6A8B /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		13C2D3CF2434A6C100BC6A8B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		13C2D3D22434BD5E00BC6A8B /* IRANSans_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = IRANSans_Bold.ttf; path = "AutoGalleryManager/Resources/New Group/IRANSans_Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		13C2D3D32434BD7B00BC6A8B /* IRANSans_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans_Light.ttf; sourceTree = "<group>"; };
+		13C2D3D42434BD9A00BC6A8B /* IRANSans_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans_Medium.ttf; sourceTree = "<group>"; };
+		13C2D3D52434BDA000BC6A8B /* IRANSans_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans_UltraLight.ttf; sourceTree = "<group>"; };
+		13C2D3D62434BDA200BC6A8B /* IRANSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = IRANSans.ttf; sourceTree = "<group>"; };
+		13C2D3E52434DD2700BC6A8B /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		13C2D3E62434DD2700BC6A8B /* DetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsController.xib; sourceTree = "<group>"; };
 		47C62AA15C897B4EE23280BD /* Pods-AutoGalleryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.debug.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.debug.xcconfig"; sourceTree = "<group>"; };
 		A8F8052394E93069D2A723E5 /* Pods-AutoGalleryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.release.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.release.xcconfig"; sourceTree = "<group>"; };
 		C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoGalleryManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +316,7 @@
 		13BFA47C242F7064006B726A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				13C2D3D12434BD1C00BC6A8B /* Fonts */,
 				13BFA4DF242F7874006B726A /* Extensions */,
 				13BFA4DB242F7754006B726A /* Constants.swift */,
 				13BFA4DA242F7746006B726A /* Vibrator.swift */,
@@ -327,6 +350,7 @@
 		13BFA47F242F707F006B726A /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				13C2D3E12434DC7E00BC6A8B /* Shared */,
 				13BFA481242F7098006B726A /* Sellers */,
 				13BFA480242F708E006B726A /* Customers */,
 			);
@@ -338,8 +362,6 @@
 			children = (
 				13BFA4C6242F73E8006B726A /* Cell */,
 				13BFA4BD242F72EF006B726A /* AddNew */,
-				13BFA499242F7205006B726A /* CustomersController.swift */,
-				13BFA49A242F7205006B726A /* CustomersController.xib */,
 				13BFA4E4242F7944006B726A /* CustomersNavigator.swift */,
 			);
 			path = Customers;
@@ -350,8 +372,6 @@
 			children = (
 				13BFA4CD242F74CE006B726A /* Cell */,
 				13BFA4BC242F72E8006B726A /* AddNew */,
-				13BFA49D242F7220006B726A /* SellersController.swift */,
-				13BFA49E242F7220006B726A /* SellersController.xib */,
 				13BFA4E2242F7929006B726A /* SellersNavigator.swift */,
 			);
 			path = Sellers;
@@ -426,6 +446,8 @@
 			children = (
 				13BFA4D2242F7533006B726A /* AdvertiseCell.swift */,
 				13BFA4D3242F7533006B726A /* AdvertiseCell.xib */,
+				13C2D3C024348AA300BC6A8B /* AdvertiseViewModel.swift */,
+				13C2D3C224348DF200BC6A8B /* AdvertiseDynamicType.swift */,
 			);
 			path = AdvertiseCell;
 			sourceTree = "<group>";
@@ -443,9 +465,68 @@
 		13BFA4DF242F7874006B726A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				13C2D3BE2433FAFF00BC6A8B /* UIViewExtensions.swift */,
 				13BFA4E0242F7898006B726A /* String+Extensions.swift */,
+				13C2D3CF2434A6C100BC6A8B /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		13C2D3C42434987000BC6A8B /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				13C2D3C7243498BC00BC6A8B /* LandingListController.swift */,
+				13C2D3C8243498BC00BC6A8B /* LandingListController.xib */,
+				13C2D3CB24349B3700BC6A8B /* TitleCell.swift */,
+				13C2D3CC24349B3700BC6A8B /* TitleCell.xib */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		13C2D3D12434BD1C00BC6A8B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				13C2D3D22434BD5E00BC6A8B /* IRANSans_Bold.ttf */,
+				13C2D3D32434BD7B00BC6A8B /* IRANSans_Light.ttf */,
+				13C2D3D42434BD9A00BC6A8B /* IRANSans_Medium.ttf */,
+				13C2D3D52434BDA000BC6A8B /* IRANSans_UltraLight.ttf */,
+				13C2D3D62434BDA200BC6A8B /* IRANSans.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		13C2D3E12434DC7E00BC6A8B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				13C2D3E22434DC8500BC6A8B /* Details */,
+				13C2D3C42434987000BC6A8B /* Landing */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		13C2D3E22434DC8500BC6A8B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				13C2D3E42434DCC700BC6A8B /* SliderComponent */,
+				13C2D3E32434DC9500BC6A8B /* ContactInfoComponent */,
+				13C2D3E52434DD2700BC6A8B /* DetailsController.swift */,
+				13C2D3E62434DD2700BC6A8B /* DetailsController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		13C2D3E32434DC9500BC6A8B /* ContactInfoComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContactInfoComponent;
+			sourceTree = "<group>";
+		};
+		13C2D3E42434DCC700BC6A8B /* SliderComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SliderComponent;
 			sourceTree = "<group>";
 		};
 		5126BAB54F004B96A50F14FE /* Frameworks */ = {
@@ -607,17 +688,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C2D3D92434BEAC00BC6A8B /* IRANSans_Medium.ttf in Resources */,
 				13BFA4C5242F7329006B726A /* AddNewCustomer.xib in Resources */,
 				13BFA486242F7143006B726A /* SplashViewController.xib in Resources */,
-				13BFA49C242F7205006B726A /* CustomersController.xib in Resources */,
 				13BFA4EB242F7FCC006B726A /* ErrorSound.mp3 in Resources */,
+				13C2D3D82434BEAC00BC6A8B /* IRANSans_Light.ttf in Resources */,
 				13BFA460242F700D006B726A /* Assets.xcassets in Resources */,
+				13C2D3CA243498BC00BC6A8B /* LandingListController.xib in Resources */,
 				13BFA4DE242F7836006B726A /* Localizable.strings in Resources */,
-				13BFA4A0242F7220006B726A /* SellersController.xib in Resources */,
+				13C2D3DA2434BEAC00BC6A8B /* IRANSans_UltraLight.ttf in Resources */,
 				13BFA493242F717A006B726A /* PopUpCoverViewController.xib in Resources */,
+				13C2D3E82434DD2700BC6A8B /* DetailsController.xib in Resources */,
 				13BFA4C1242F7301006B726A /* AddNewSeller.xib in Resources */,
 				13BFA4EF242F8310006B726A /* LaunchScreen.storyboard in Resources */,
+				13C2D3DB2434BEAC00BC6A8B /* IRANSans.ttf in Resources */,
+				13C2D3D72434BEAC00BC6A8B /* IRANSans_Bold.ttf in Resources */,
 				13BFA4EC242F7FCE006B726A /* SplashSound.mp3 in Resources */,
+				13C2D3CE24349B3700BC6A8B /* TitleCell.xib in Resources */,
 				13BFA4D5242F7533006B726A /* AdvertiseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,21 +774,26 @@
 				13BFA4C4242F7329006B726A /* AddNewCustomer.swift in Sources */,
 				13BFA495242F717A006B726A /* Error+PopUpCover.swift in Sources */,
 				13BFA4EE242F7FD6006B726A /* Constants.swift in Sources */,
-				13BFA49B242F7205006B726A /* CustomersController.swift in Sources */,
 				13BFA4E3242F7929006B726A /* SellersNavigator.swift in Sources */,
 				13BFA48B242F716B006B726A /* MainNavigationController.swift in Sources */,
 				13BFA494242F717A006B726A /* PopUpCoverViewModel.swift in Sources */,
 				13BFA4CF242F74E8006B726A /* SellerAdViewModel.swift in Sources */,
+				13C2D3CD24349B3700BC6A8B /* TitleCell.swift in Sources */,
+				13C2D3C124348AA300BC6A8B /* AdvertiseViewModel.swift in Sources */,
 				13BFA4ED242F7FD4006B726A /* Vibrator.swift in Sources */,
 				13BFA4E9242F7DC1006B726A /* Application.swift in Sources */,
+				13C2D3C9243498BC00BC6A8B /* LandingListController.swift in Sources */,
 				13BFA48C242F716B006B726A /* Navigator.swift in Sources */,
 				13BFA4CC242F74CA006B726A /* CustomerAdViewModel.swift in Sources */,
+				13C2D3D02434A6C100BC6A8B /* Extensions.swift in Sources */,
+				13C2D3BF2433FAFF00BC6A8B /* UIViewExtensions.swift in Sources */,
 				13BFA492242F717A006B726A /* PopUpCoverViewController.swift in Sources */,
 				13BFA4EA242F7FC9006B726A /* AppSoundEffects.swift in Sources */,
-				13BFA49F242F7220006B726A /* SellersController.swift in Sources */,
 				13BFA4F1242F89EE006B726A /* SceneDelegate.swift in Sources */,
 				13BFA4C0242F7301006B726A /* AddNewSeller.swift in Sources */,
+				13C2D3C324348DF200BC6A8B /* AdvertiseDynamicType.swift in Sources */,
 				13BFA485242F7143006B726A /* SplashViewController.swift in Sources */,
+				13C2D3E72434DD2700BC6A8B /* DetailsController.swift in Sources */,
 				13BFA4D4242F7533006B726A /* AdvertiseCell.swift in Sources */,
 				13BFA4E5242F7944006B726A /* CustomersNavigator.swift in Sources */,
 				131C7AD22430F79800782708 /* DataModels.xcdatamodeld in Sources */,

@@ -9,7 +9,17 @@
 //MARK: - Titles
 "Tab_1_Title" = "مشتری ها";
 "Tab_2_Title" = "فروشندگان";
-
+"Automatic" = "اتوماتیک";
+"Manual" = "دنده ای";
+"Model" = "مدل";
+"Million" = "میلیون تومان";
+"complete_BodyColor" = "تمام رنگ";
+"single_BodyColor" = "یک لکه";
+"two_BodyColor" = "دو لکه";
+"three_BodyColor" = "چند لکه";
+"over_BodyColor" = "دور رنگ";
+"no_BodyColor" = "بی رنگ";
+"unknown_BodyColor" = "نیاز به بررسی";
 //MARK: - Buttons
 "OK" = "باشه";
 
@@ -17,3 +27,4 @@
 "UnknownError" = "خطایی رخ داده است";
 "AnErrorOccured" = "مشکلی پیش آمده است";
 "ConnectionProblem" = "خطای شبکه";
+"Empty" = "پیغامی برای نمایش وجود ندارد.";

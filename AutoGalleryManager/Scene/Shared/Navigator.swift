@@ -17,36 +17,16 @@ class Navigator: NSObject {
         self.navigationController = navigationController
     }
 	func toTabbar(withDefaultPresentedController handler: ((UIViewController) -> Void)? = nil) {
-		//Initiate your viewControllers
-		let sellersNavigationController = UINavigationController()
-		sellersNavigationController.navigationBar.prefersLargeTitles = true
-		sellersNavigationController.setNavigationBarHidden(false, animated: false)
-		let sellersNavigator = SellersNavigator(navigationController: sellersNavigationController)
-		let sellersVC = sellersNavigator.setup()
-    sellersVC.title = "Tab_2_Title".localize()
 		
-		let customersNavigationController = UINavigationController()
-		customersNavigationController.navigationBar.prefersLargeTitles = true
-		customersNavigationController.setNavigationBarHidden(false, animated: false)
-		let customersNavigator = CustomersNavigator(navigationController: customersNavigationController)
-		let customerVC = customersNavigator.setup()
-    customerVC.title = "Tab_1_Title".localize()
-
+		let sellersNavigationController = LandingListController(navigator: self, controllerType: .seller).makeNavigationController()
+		let customersNavigationController = LandingListController(navigator: self, controllerType: .customer).makeNavigationController()
 		let tabBarViewController = UITabBarController()
 		
-
-		customerVC.tabBarItem = UITabBarItem(title: "Tab_1_Title".localize(), image: UIImage(named: "Tab_1"), tag: 0)
-		sellersVC.tabBarItem = UITabBarItem(title: "Tab_2_Title".localize(), image: UIImage(named: "Tab_2"), tag: 0)
-		
-
-		tabBarViewController.setViewControllers([customerVC, sellersVC], animated: true)
-		
+		tabBarViewController.setViewControllers([customersNavigationController, sellersNavigationController], animated: true)		
 		navigationController.setViewControllers([tabBarViewController], animated: true)
-		if let safe = handler  {
-			safe(customerVC)
-		}
 	}
-  func logError(error: Error, navigatorName name: String, message: String = "Empty"){
+	
+	func logError(error: Error, navigatorName name: String, message: String = "Empty".localize()){
     print("-------------\nerror inside \(name) Navigator -> \(error) \nmessage: \(message) \n-------------\n")
     DispatchQueue.main.async { [navigationController, error] in
       let errorVC = PopUpCoverViewController(nibName: "PopUpCoverViewController", bundle: nil)

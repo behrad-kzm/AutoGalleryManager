@@ -22,7 +22,7 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isAutomatic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="yearModel" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>

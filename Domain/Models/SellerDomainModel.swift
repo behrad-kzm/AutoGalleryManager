@@ -14,24 +14,30 @@ public struct SellerDomainModel {
 	public let descriptionText: String
 	public let bodyColored: BodyColoredType
 	public let phoneNumber: String
-	public let price: String
+	public let price: Int16
 	public let userName: String
 	public let yearModel: Int16
 	public let isAutomatic: Bool
 	public let brandName: String
+	public let color: String
+	public let title: String
 	
 	public init(id: String?,
+							title: String,
 							carName: String,
 							creationDate: Date,
 							descriptionText: String,
 							bodyColored: BodyColoredType,
 							phoneNumber: String,
-							price: String,
+							price: Int16,
 							userName: String,
 							yearModel: Int16,
+							color: String,
 							isAutomatic: Bool,
 							brandName: String) {
 		self.id = id
+		self.title = title
+		self.color = color
 		self.carName = carName
 		self.creationDate = creationDate
 		self.descriptionText = descriptionText

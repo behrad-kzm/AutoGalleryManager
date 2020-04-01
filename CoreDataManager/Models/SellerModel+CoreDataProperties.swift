@@ -23,16 +23,17 @@ extension SellerModel {
 	@NSManaged public var descriptionText: String?
 	@NSManaged public var bodyColored: Int16
 	@NSManaged public var phoneNumber: String?
-	@NSManaged public var price: String?
+	@NSManaged public var price: Int16
 	@NSManaged public var userName: String?
 	@NSManaged public var yearModel: Int16
 	@NSManaged public var isAutomatic: Bool
 	@NSManaged public var brandName: String?
+	@NSManaged public var color: String?
 	
 }
 
 extension SellerModel {
   func asDomain() -> SellerDomainModel {
-		return SellerDomainModel(id: id, carName: carName ?? "", creationDate: creationDate, descriptionText: descriptionText ?? "", bodyColored: BodyColoredType(rawValue: bodyColored) ?? .unknown, phoneNumber: phoneNumber ?? "", price: price ?? "", userName: userName ?? "", yearModel: yearModel, isAutomatic: isAutomatic, brandName: brandName ?? "")
+		return SellerDomainModel(id: id, title: title ?? "", carName: carName ?? "", creationDate: creationDate, descriptionText: descriptionText ?? "", bodyColored: BodyColoredType(rawValue: bodyColored) ?? .unknown, phoneNumber: phoneNumber ?? "", price: price, userName: userName ?? "", yearModel: yearModel, color: color ?? "", isAutomatic: isAutomatic, brandName: brandName ?? "")
   }
 }
