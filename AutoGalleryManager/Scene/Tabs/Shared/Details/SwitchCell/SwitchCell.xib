@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans_Bold.ttf">
+            <string>IRANSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="SwitchCell" customModule="AutoGalleryManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="405" height="72"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p78-OQ-TQO">
+                        <rect key="frame" x="12" y="4" width="381" height="64"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKO-Be-ENI" userLabel="RemoveItem">
+                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6L-hS-wd1">
+                                        <rect key="frame" x="8" y="8" width="142.5" height="48"/>
+                                        <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="17"/>
+                                        <state key="normal" title="حذف">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="removeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Njp-qX-6tv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="O6L-hS-wd1" secondAttribute="trailing" constant="8" id="0Ll-MD-kXM"/>
+                                    <constraint firstItem="O6L-hS-wd1" firstAttribute="top" secondItem="LKO-Be-ENI" secondAttribute="top" constant="8" id="OMK-2k-vxJ"/>
+                                    <constraint firstItem="O6L-hS-wd1" firstAttribute="leading" secondItem="LKO-Be-ENI" secondAttribute="leading" constant="8" id="VSu-TV-hVD"/>
+                                    <constraint firstAttribute="bottom" secondItem="O6L-hS-wd1" secondAttribute="bottom" constant="8" id="XEY-ur-4ad"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsJ-6a-KcE" userLabel="Edit">
+                                <rect key="frame" x="158.5" y="0.0" width="158.5" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umb-nq-Msp">
+                                        <rect key="frame" x="8" y="8" width="142.5" height="48"/>
+                                        <fontDescription key="fontDescription" name="IRANSans-Bold" family="IRANSans" pointSize="18"/>
+                                        <state key="normal" title="ویرایش"/>
+                                        <connections>
+                                            <action selector="editAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pHf-ub-hWI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="umb-nq-Msp" secondAttribute="bottom" constant="8" id="Rb2-FF-PFf"/>
+                                    <constraint firstItem="umb-nq-Msp" firstAttribute="leading" secondItem="xsJ-6a-KcE" secondAttribute="leading" constant="8" id="YtE-ym-7Vg"/>
+                                    <constraint firstAttribute="trailing" secondItem="umb-nq-Msp" secondAttribute="trailing" constant="8" id="clO-i2-KB7"/>
+                                    <constraint firstItem="umb-nq-Msp" firstAttribute="top" secondItem="xsJ-6a-KcE" secondAttribute="top" constant="8" id="rzu-tr-5mM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p5-zb-M0N">
+                                <rect key="frame" x="317" y="0.0" width="64" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEh-h3-w9t">
+                                        <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="CIO-P6-Aex"/>
+                                            <constraint firstAttribute="width" secondItem="bEh-h3-w9t" secondAttribute="height" multiplier="1:1" id="JrX-6f-bb0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2p5-zb-M0N" secondAttribute="height" id="fBM-5H-KvO"/>
+                                    <constraint firstItem="bEh-h3-w9t" firstAttribute="centerY" secondItem="2p5-zb-M0N" secondAttribute="centerY" id="fCB-IY-174"/>
+                                    <constraint firstItem="bEh-h3-w9t" firstAttribute="centerX" secondItem="2p5-zb-M0N" secondAttribute="centerX" id="gFD-C6-csA"/>
+                                    <constraint firstItem="bEh-h3-w9t" firstAttribute="top" secondItem="2p5-zb-M0N" secondAttribute="top" constant="8" id="rVT-cW-UTH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xsJ-6a-KcE" firstAttribute="width" secondItem="LKO-Be-ENI" secondAttribute="width" multiplier="1:1" id="WQ3-mv-lEq"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="p78-OQ-TQO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="FqD-GO-a7J"/>
+                    <constraint firstAttribute="trailing" secondItem="p78-OQ-TQO" secondAttribute="trailing" constant="12" id="Neu-I3-ftC"/>
+                    <constraint firstAttribute="bottom" secondItem="p78-OQ-TQO" secondAttribute="bottom" constant="4" id="QhO-wY-x4s"/>
+                    <constraint firstItem="p78-OQ-TQO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Rxo-Ff-6mE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="editButton" destination="umb-nq-Msp" id="wBt-aK-vRw"/>
+                <outlet property="faveContainer" destination="bEh-h3-w9t" id="wOe-c4-DGk"/>
+                <outlet property="removeButton" destination="O6L-hS-wd1" id="1zo-tB-1vY"/>
+            </connections>
+            <point key="canvasLocation" x="48.550724637681164" y="146.65178571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

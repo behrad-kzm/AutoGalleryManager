@@ -46,6 +46,11 @@ extension AdvertiseCell: BEKBindableCell {
     typealias ViewModeltype = AdvertiseViewModelType
     func bindData(withViewModel viewModel: AdvertiseViewModelType) {
 			vm = viewModel
+			if viewModel.asAdvertiseConvertable().favorite {
+				containerView.backgroundColor = UIColor(red: 255/255, green: 254/255, blue: 195/255, alpha: 1)
+			}else {
+				containerView.backgroundColor = .white
+			}
 			priceLabel.textColor = (vm.flat() == .seller) ? .red : .systemGreen
 			let adViewModel = vm.asViewModel()
 			titleLabel.text = adViewModel.title

@@ -15,19 +15,22 @@ struct SellerAdViewModel {
 	let carName: String
 	let price: String
 	let color: String
-	let gearBoxType: String
+	let id: String?
+	let favorite: Bool
 	let bodyColored: String
 	let yearModel: String
 	let descriptionText: String
 	let userName: String
 	let phoneNumber: String
+	let kilometer: Int16
+	let contactDescription: String
 }
 extension SellerDomainModel {
 	func asViewModel() -> SellerAdViewModel {
 		let yearString = "Model".localize() + " \(yearModel)"
 		let priceString = "\(price) " + "Million".localize()
 		let titleText = title.isEmpty ? "\(brandName) \(carName) \(bodyColored.getTitle()) \(color) \(yearString)" : title
-		return SellerAdViewModel(model: self, title: titleText, brandName: brandName, carName: carName, price: priceString, color: color, gearBoxType: isAutomatic ? "Automatic".localize() : "Manual".localize(), bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, userName: userName, phoneNumber: phoneNumber)
+		return SellerAdViewModel(model: self, title: titleText, brandName: brandName, carName: carName, price: priceString, color: color, id: id, favorite: favorite, bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, userName: userName, phoneNumber: phoneNumber, kilometer: kilometer, contactDescription: contactDescription)
 	}
 }
 extension SellerAdViewModel: AdvertiseConvertable {

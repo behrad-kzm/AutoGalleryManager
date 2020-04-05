@@ -1,0 +1,6 @@
+module RAImagePicker {
+  umbrella header "RAImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

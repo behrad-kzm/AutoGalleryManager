@@ -12,7 +12,7 @@ import Domain
 struct SasCoreData<T: NSManagedObject> {
   
   let persistentContainer: NSPersistentContainer = {
-    let container = NSPersistentContainer(name: "VirusCareCoreDataModels")
+    let container = NSPersistentContainer(name: "DataModels")
     container.loadPersistentStores { (storeDescription, err) in
       if let err = err {
         fatalError("Loading of store failed: \(err)")

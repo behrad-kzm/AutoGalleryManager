@@ -1,0 +1,1 @@
+../../../RAImagePicker/RAImagePicker/Classes/Processing/UIImageEffects.h

@@ -17,10 +17,12 @@ public struct SellerDomainModel {
 	public let price: Int16
 	public let userName: String
 	public let yearModel: Int16
-	public let isAutomatic: Bool
+	public let favorite: Bool
 	public let brandName: String
 	public let color: String
 	public let title: String
+	public let kilometer: Int16
+	public let contactDescription: String
 	
 	public init(id: String?,
 							title: String,
@@ -31,9 +33,11 @@ public struct SellerDomainModel {
 							phoneNumber: String,
 							price: Int16,
 							userName: String,
+							kilometer: Int16,
+							contactDesc: String,
 							yearModel: Int16,
 							color: String,
-							isAutomatic: Bool,
+							favorite: Bool,
 							brandName: String) {
 		self.id = id
 		self.title = title
@@ -47,6 +51,8 @@ public struct SellerDomainModel {
 		self.userName = userName
 		self.yearModel = yearModel
 		self.brandName = brandName
-		self.isAutomatic = isAutomatic
+		self.favorite = favorite
+		self.contactDescription = contactDesc
+		self.kilometer = kilometer
 	}
 }

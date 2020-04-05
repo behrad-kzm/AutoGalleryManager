@@ -16,7 +16,7 @@ final class SplashNavigator: Navigator {
 	}
 
 	func toHome() {
-		navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//		navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
 		toTabbar()
 	}
 	

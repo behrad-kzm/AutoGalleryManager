@@ -10,13 +10,17 @@ import Foundation
 import Domain
 struct CustomerAdViewModel {
 	let model: CustomerDomainModel
+	let id: String?
+	let favorite: Bool
 	let title: String
 	let carName: String
 	let date: String
-	let priceRange: String
+	let priceFrom: String
+	let priceTo: String
 	let bodyColored: String
 	let yearModel: String
 	let descriptionText: String
+	let contactDescription: String
 	let userName: String
 	let phoneNumber: String
 }
@@ -24,10 +28,9 @@ struct CustomerAdViewModel {
 extension CustomerDomainModel {
 	func asViewModel() -> CustomerAdViewModel {
 		let yearString = "Model".localize() + " \(year)"
-		let priceString = "\(priceRange) " + "Million".localize()
-		let dateString = "تستس دیروز"
+		let dateString = "دقایقی پیش"
 		let titleText = title.isEmpty ? "\(carName) \(bodyColored.getTitle()) \(yearString)" : title
-		return CustomerAdViewModel(model: self, title: titleText, carName: carName, date: dateString, priceRange: priceString, bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, userName: userName, phoneNumber: phoneNumber)
+		return CustomerAdViewModel(model: self, id: id, favorite: favorite, title: titleText, carName: carName, date: dateString, priceFrom: String(priceFrom), priceTo: String(priceTo), bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, contactDescription: contactDescription, userName: userName, phoneNumber: phoneNumber)
 	}
 }
 
@@ -35,7 +38,8 @@ extension CustomerAdViewModel: AdvertiseConvertable {
 	func asAdvertiseViewModel() -> AdvertiseViewModel {
 		let imageName = "Placeholder"
 		let subtitle = "\(userName) "
-		return AdvertiseViewModel(title: title, imageName: imageName, subtitle: subtitle, price: priceRange)
+		let priceString = " از " + " \(priceFrom) " + "Million".localize() + " تا " + " \(priceTo) " + "Million".localize()
+		return AdvertiseViewModel(title: title, imageName: imageName, subtitle: subtitle, price: priceString)
 	}
 	
 	func asType() -> AdvertiseViewModelType {

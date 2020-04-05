@@ -12,7 +12,13 @@ import UIKit
 final class LandingNavigator: Navigator {
 
 	func toDetails(viewModel: AdvertiseViewModelType) {
-		let controller = DetailsController(navigator: self, controllerType: viewModel)
+		let navigator = DetailsNavigator(navigationController: navigationController)
+		let controller = DetailsController(navigator: navigator, controllerType: viewModel)
+		navigationController.pushViewController(controller, animated: true)
+	}
+	
+	func toAddNewModel(type: AdvertiseFlatViewModelType){
+		let controller = AddNewModelViewController(navigator: self, controllerType: type)
 		navigationController.pushViewController(controller, animated: true)
 	}
 }

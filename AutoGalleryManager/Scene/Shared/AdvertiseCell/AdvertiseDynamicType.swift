@@ -41,8 +41,10 @@ enum AdvertiseFlatViewModelType {
 	
 }
 protocol AdvertiseConvertable {
+	var id: String? { get }
 	var phoneNumber: String { get }
 	var userName: String { get }
+	var favorite: Bool { get }
 	var title: String { get }
 	func asAdvertiseViewModel() -> AdvertiseViewModel
 	func asType() -> AdvertiseViewModelType

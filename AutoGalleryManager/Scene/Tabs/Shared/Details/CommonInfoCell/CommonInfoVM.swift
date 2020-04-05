@@ -7,7 +7,9 @@
 //
 
 import Foundation
+
 struct CommonInfoVM {
 	let title: String
 	let description: String
+
 }

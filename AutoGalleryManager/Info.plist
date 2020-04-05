@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to take pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app wants to use your photos.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -18,8 +22,17 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>IRANSans_Bold.ttf</string>
+		<string>IRANSans.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -49,21 +62,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>IRANSans_Bold.ttf</string>
-		<string>IRANSans.ttf</string>
-	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>tel</string>
 	</array>
 </dict>
 </plist>

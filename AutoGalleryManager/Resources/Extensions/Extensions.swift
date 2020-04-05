@@ -47,6 +47,7 @@ extension Array where Element == SellerAdViewModel {
 			return self
 		}
 		return filter { (item) -> Bool in
+			
 			let title = item.title.contains(key)
 			let bodyColored = item.bodyColored.contains(key)
 			let brand = item.brandName.contains(key)

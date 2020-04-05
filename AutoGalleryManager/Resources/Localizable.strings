@@ -7,12 +7,12 @@
 */
 
 //MARK: - Titles
-"Tab_1_Title" = "درخواست کنندگان";
+"Tab_1_Title" = "خریداران";
 "Tab_2_Title" = "فروشندگان";
 "Name" = "نام";
 "Mobile" = "شماره تماس";
-"Automatic" = "اتوماتیک";
-"Manual" = "دنده ای";
+"Automatic" = "فعال";
+"Manual" = "غیر فعال";
 "Model" = "مدل";
 "ContactInfo" = "مشخصات کاربر";
 "Million" = "میلیون تومان";
@@ -37,13 +37,15 @@
 "ConnectionProblem" = "خطای شبکه";
 "Empty" = "پیغامی برای نمایش وجود ندارد.";
 
-//MARK: - Errors
+//MARK: - Label
+"Favorite_Title" = "ستاره دار کردن";
 "Brand_Title" = "برند";
+"Kilometer_Title" = "کارکرد";
 "CarName_Title" = "مدل";
 "Year_Title" = "سال ساخت";
 "Color_Title" = "رنگ";
 "BodyColor_Title" = "وضعیت بدنه";
-"Automatic_Title" = "گیربکس";
+"Automatic_Title" = "ستاره‌دار کردن";
 "Price_Title" = "قیمت";
 "Description_Title" = "توضیحات";
 "Date_Title" = "تاریخ ثبت";

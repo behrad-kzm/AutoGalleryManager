@@ -6,10 +6,19 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRANSans_Medium.ttf">
+            <string>IRANSans-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LandingListController" customModule="AutoGalleryManager" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="clearImageView" destination="W11-zo-Mj7" id="e6d-es-bft"/>
+                <outlet property="noContentLabel" destination="eDL-nT-qN9" id="ctH-7D-Ibe"/>
                 <outlet property="searchContainer" destination="YFg-hR-CPO" id="i5r-Ar-8zK"/>
                 <outlet property="searchTextField" destination="aIy-KQ-ygw" id="ckg-Wz-iuf"/>
                 <outlet property="tableView" destination="fEj-WN-CZc" id="6gg-Gq-Eha"/>
@@ -98,9 +107,53 @@
                         <constraint firstAttribute="bottom" secondItem="YFg-hR-CPO" secondAttribute="bottom" constant="16" id="kyr-PE-j1S"/>
                     </constraints>
                 </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptn-xt-aNG">
+                    <rect key="frame" x="334" y="706" width="64" height="64"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6yE-Cq-nVO">
+                            <rect key="frame" x="16" y="18" width="32" height="28"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="A7J-DX-FJO"/>
+                                <constraint firstAttribute="height" constant="32" id="YgF-IB-uKK"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMc-gQ-fAR">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            <connections>
+                                <action selector="addModelAction:" destination="-1" eventType="touchUpInside" id="gfB-jL-zfE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="EMc-gQ-fAR" firstAttribute="top" secondItem="ptn-xt-aNG" secondAttribute="top" id="0am-a3-rPM"/>
+                        <constraint firstItem="6yE-Cq-nVO" firstAttribute="centerY" secondItem="ptn-xt-aNG" secondAttribute="centerY" id="71i-dE-uxb"/>
+                        <constraint firstAttribute="bottom" secondItem="EMc-gQ-fAR" secondAttribute="bottom" id="8cE-Ep-hIL"/>
+                        <constraint firstAttribute="trailing" secondItem="EMc-gQ-fAR" secondAttribute="trailing" id="c5s-E4-bAH"/>
+                        <constraint firstItem="EMc-gQ-fAR" firstAttribute="leading" secondItem="ptn-xt-aNG" secondAttribute="leading" id="lAX-S2-JFk"/>
+                        <constraint firstAttribute="width" secondItem="ptn-xt-aNG" secondAttribute="height" multiplier="1:1" id="oUT-xK-K53"/>
+                        <constraint firstItem="6yE-Cq-nVO" firstAttribute="centerX" secondItem="ptn-xt-aNG" secondAttribute="centerX" id="sDj-fJ-s5f"/>
+                        <constraint firstAttribute="height" constant="64" id="xNm-u8-5sf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="32"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="addButt"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موردی برای نمایش نیست" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDL-nT-qN9">
+                    <rect key="frame" x="135.5" y="441" width="143.5" height="24"/>
+                    <fontDescription key="fontDescription" name="IRANSans-Medium" family="IRANSans" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="WXi-ix-xBT" firstAttribute="top" secondItem="ptn-xt-aNG" secondAttribute="bottom" constant="32" id="8TG-jc-27R"/>
+                <constraint firstItem="eDL-nT-qN9" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="9eJ-6m-DFG"/>
                 <constraint firstItem="WXi-ix-xBT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CWW-Qb-XXa"/>
                 <constraint firstAttribute="trailing" secondItem="fEj-WN-CZc" secondAttribute="trailing" id="GRK-Th-tTs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WXi-ix-xBT" secondAttribute="bottom" id="NKb-7Z-lgM"/>
@@ -108,6 +161,8 @@
                 <constraint firstItem="fEj-WN-CZc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eHb-fA-J0K"/>
                 <constraint firstAttribute="bottom" secondItem="fEj-WN-CZc" secondAttribute="bottom" id="ifc-Gu-YAA"/>
                 <constraint firstItem="fEj-WN-CZc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="naV-tZ-zPJ"/>
+                <constraint firstItem="eDL-nT-qN9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ugI-y0-sCE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ptn-xt-aNG" secondAttribute="trailing" constant="16" id="yxy-AL-Tpv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
@@ -116,5 +171,6 @@
     <resources>
         <image name="Clear" width="512" height="512"/>
         <image name="Search" width="512" height="512"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>

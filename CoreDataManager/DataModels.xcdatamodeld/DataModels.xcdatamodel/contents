@@ -3,24 +3,34 @@
     <entity name="CustomerModel" representedClassName="CustomerModel" syncable="YES">
         <attribute name="bodyColored" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="carName" optional="YES" attributeType="String"/>
+        <attribute name="contactDescription" optional="YES" attributeType="String"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <attribute name="priceRange" optional="YES" attributeType="String"/>
+        <attribute name="priceFrom" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="priceTo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="ImageModel" representedClassName="ImageModel" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="imageId" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SellerModel" representedClassName="SellerModel" syncable="YES">
         <attribute name="bodyColored" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="brandName" optional="YES" attributeType="String"/>
         <attribute name="carName" optional="YES" attributeType="String"/>
         <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="contactDescription" optional="YES" attributeType="String"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="isAutomatic" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="kilometer" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
@@ -28,7 +38,8 @@
         <attribute name="yearModel" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="238"/>
+        <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="238"/>
+        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="268"/>
+        <element name="ImageModel" positionX="-54" positionY="135" width="128" height="88"/>
     </elements>
 </model>
