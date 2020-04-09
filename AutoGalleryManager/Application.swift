@@ -20,6 +20,10 @@ final class Application {
     let mainNavigationController = MainNavigationController()
     window.rootViewController = mainNavigationController
     window.makeKeyAndVisible()
+		let appearance = UITabBarItem.appearance()
+		let attributes = [NSAttributedString.Key.font: UIFont.getRegularFont(size: 14)]
+		appearance.setTitleTextAttributes(attributes, for: .normal)
+		
     SplashNavigator(navigationController: mainNavigationController).setup()
   }
   

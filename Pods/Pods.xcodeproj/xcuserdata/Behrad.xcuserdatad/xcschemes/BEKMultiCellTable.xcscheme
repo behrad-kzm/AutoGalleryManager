@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2446085B059EBA95BF43847E48F9D47E"
-               BuildableName = "libBEKMultiCellTable.a"
+               BuildableName = "BEKMultiCellTable.framework"
                BlueprintName = "BEKMultiCellTable"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

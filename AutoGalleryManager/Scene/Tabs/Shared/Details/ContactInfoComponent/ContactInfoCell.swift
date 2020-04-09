@@ -13,6 +13,7 @@ class ContactInfoCell: UITableViewCell {
 	@IBOutlet weak var shadowContainer: UIView!
 	@IBOutlet weak var containerView: UIView!
 	
+	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var detailLabel: UILabel!
 	@IBOutlet weak var phoneLabel: UILabel!
@@ -43,5 +44,6 @@ extension ContactInfoCell: BEKBindableCell {
 	func bindData(withViewModel viewModel: ContactVM) {
 		detailLabel.text = viewModel.userName
 		phoneLabel.text = viewModel.phoneNumber
+		descriptionLabel.text = viewModel.desciptionText
 	}
 }

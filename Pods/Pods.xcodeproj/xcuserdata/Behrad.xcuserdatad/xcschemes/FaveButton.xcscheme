@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5E6A4B14CA023C808656D9DC438729B2"
-               BuildableName = "libFaveButton.a"
+               BuildableName = "FaveButton.framework"
                BlueprintName = "FaveButton"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

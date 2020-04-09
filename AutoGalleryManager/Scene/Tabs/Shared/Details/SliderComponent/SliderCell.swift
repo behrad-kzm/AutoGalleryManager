@@ -7,52 +7,33 @@
 //
 
 import UIKit
-import BEKMultiCellTable
+import BEKMultiCellCollection
 
+import Domain
 class SliderCell: UITableViewCell {
-
-	@IBOutlet weak var collectionView: UICollectionView!
-	var model: SliderVM = SliderVM(images: [Data]())
-	override func awakeFromNib() {
-        super.awakeFromNib()
-		
-		collectionView.register(UINib(nibName: "SliderItemCell", bundle: nil), forCellWithReuseIdentifier: "id")
-        // Initialization code
+	@IBOutlet weak var collectionView: BEKMultiCellCollection!
+	var model: SliderVM! {
+		didSet {
+			collectionView.removeAll()
+			collectionView.reloadData()
+			let cells = model.items.compactMap { (item) -> BEKGenericCellType in
+				return BEKGenericCollectionCell<SliderItemCell>(viewModel: item, size: CGSize(width: collectionView.bounds.width - 32 , height: collectionView.bounds.height))
+			}
+			collectionView.push(cells: cells)
+			collectionView.reloadData()
+		}
 	}
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		
+	}
+	
 	func getBannerLayout() -> UICollectionViewFlowLayout {
-		let bannerListLayout = SWInflateLayout()
+		let bannerListLayout = UICollectionViewFlowLayout()
 		bannerListLayout.scrollDirection = .horizontal
 		bannerListLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 		bannerListLayout.itemSize = CGSize(width: collectionView.bounds.width - 32, height: collectionView.bounds.height)
 		return bannerListLayout
 	}
 }
-extension SliderCell: BEKBindableCell{
-	typealias ViewModelType = SliderVM
-	func bindData(withViewModel viewModel: SliderVM) {
-		model = viewModel
-		collectionView.collectionViewLayout = getBannerLayout()
-		collectionView.reloadData()
-	}
-}
-extension SliderCell: UICollectionViewDataSource {
-	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return 1
-	}
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return model.images.count
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "id", for: indexPath) as? SliderItemCell else {
-			return UICollectionViewCell()
-		}
-		if model.images.count > indexPath.row{
-			cell.imageView.image = UIImage(data: model.images[indexPath.row])
-			cell.removeContainer.isHidden = true
-		}
-		return cell
-	}
-	
-	
-}
+

@@ -100,7 +100,7 @@ class LandingListController: UIViewController {
 }
 extension LandingListController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return UIScreen.main.bounds.height / 2.5
+		return 200
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let cell = tableView.cellForRow(at: indexPath) as? AdvertiseCell{

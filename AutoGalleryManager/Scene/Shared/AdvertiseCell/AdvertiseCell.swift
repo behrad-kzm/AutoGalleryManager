@@ -8,7 +8,7 @@
 
 import UIKit
 import BEKMultiCellTable
-
+import CoreDataManager
 class AdvertiseCell: UITableViewCell {
 	
 	@IBOutlet weak var titleLabel: UILabel!
@@ -55,7 +55,16 @@ extension AdvertiseCell: BEKBindableCell {
 			let adViewModel = vm.asViewModel()
 			titleLabel.text = adViewModel.title
 			detailLabel.text = adViewModel.subtitle
-			priceLabel.text = adViewModel.price
+			priceLabel.text = adViewModel.price.toFaDigits
 			imageTitle.image = UIImage(named: adViewModel.imageName)
+			if let safeId = viewModel.asAdvertiseConvertable().id{
+				DatabaseManager.shared.getImageModels(forModelId: safeId, response: { [imageTitle] (images) in
+					if let firstImageModel = images.first{
+						imageTitle?.image = UIImage(data: firstImageModel.data)
+					}
+				}) { (error) in
+					
+				}
+			}
     }
 }

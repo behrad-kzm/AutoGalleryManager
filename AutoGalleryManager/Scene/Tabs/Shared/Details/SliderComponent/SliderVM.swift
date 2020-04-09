@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Domain
 struct SliderVM {
-	let images: [Data]
+	let items: [SliderCellItemVM]
 }

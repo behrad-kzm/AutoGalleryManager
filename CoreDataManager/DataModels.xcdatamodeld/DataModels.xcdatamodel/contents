@@ -39,7 +39,7 @@
     </entity>
     <elements>
         <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="238"/>
-        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="268"/>
         <element name="ImageModel" positionX="-54" positionY="135" width="128" height="88"/>
+        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="268"/>
     </elements>
 </model>

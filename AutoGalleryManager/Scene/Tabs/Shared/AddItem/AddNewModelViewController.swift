@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import CoreDataManager
 import Domain
+import BEKMultiCellCollection
 //import RxDataSources
 class AddNewModelViewController: UIViewController {
 	
@@ -18,7 +19,7 @@ class AddNewModelViewController: UIViewController {
 	@IBOutlet weak var colorMainContainer: UIStackView!
 	@IBOutlet weak var brandMainContainer: UIStackView!
 	@IBOutlet weak var imageCollectionContainer: UIView!
-	@IBOutlet weak var imageCollection: UICollectionView!
+	@IBOutlet weak var imageCollection: BEKMultiCellCollection!
 	
 	@IBOutlet weak var detailsContainerView: UIView!
 	@IBOutlet weak var carDetailsContainerView: UIView!
@@ -58,15 +59,23 @@ class AddNewModelViewController: UIViewController {
 	@IBOutlet weak var kilometerMainContainer: UIStackView!
 	@IBOutlet weak var sellerPriceContainer: UIStackView!
 	
-
+	@IBOutlet weak var contactDescriptionContainer: UIView!
+	
 	@IBOutlet weak var mainScrollView: UIScrollView!
 	@IBOutlet weak var detailsLabel: UILabel!
 	@IBOutlet weak var carDetailsLabel: UILabel!
 	@IBOutlet weak var contactDetailsLabel: UILabel!
 	@IBOutlet weak var largeTitleLabel: UILabel!
 	var navigator: Navigator!
+	var globalSafeModelId = UUID().uuidString
+	var images = [ImageDomainModel](){
+		didSet{
+			loadImages()
+		}
+	}
+	
 	@IBOutlet weak var saveButton: UIButton!
-
+	
 	let disposeBag = DisposeBag()
 	let bodyColorItems = [BodyColoredType.noColor, .singlePiece, .twoPiece, .threeAndMore, .over, .complete, .unknown]
 	var controllerType: AdvertiseFlatViewModelType
@@ -81,6 +90,10 @@ class AddNewModelViewController: UIViewController {
 		self.navigator = navigator
 		self.controllerType = controllerType.flat()
 		self.editingControllerType = controllerType
+		if let id = controllerType.asAdvertiseConvertable().id {
+			self.globalSafeModelId = id
+		}
+		
 		super.init(nibName: "AddNewModelViewController", bundle: nil)
 	}
 	required init?(coder: NSCoder) {
@@ -89,25 +102,29 @@ class AddNewModelViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		imageCollection.register(UINib(nibName: "SliderItemCell", bundle: nil), forCellWithReuseIdentifier: "id")
-		imageCollection.delegate = self
-		imageCollection.dataSource = self
 		navigationController?.setNavigationBarHidden(false, animated: false)
 		bodyPicker.dataSource = self
 		bodyPicker.delegate = self
 		mainScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 64, right: 0)
 		setupUI()
 	}
-	override func viewWillDisappear(_ animated: Bool) {
-		navigationController?.setNavigationBarHidden(true, animated: false)
-		super.viewWillDisappear(animated)
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		loadSlider()
 	}
-	
 	func setupUI() { //Fill here if needed
+		contactInfoDescriptionTextView.textAlignment = .right
+		descriptionTextView.textAlignment = .right
 		descriptionContainer.layer.cornerRadius = 4
 		descriptionContainer.layer.borderColor = UIColor.lightGray.cgColor
 		descriptionContainer.layer.borderWidth = 1
+		imageCollectionContainer.layer.cornerRadius = 8
+		imageCollectionContainer.layer.borderWidth = 1
+		imageCollectionContainer.layer.borderColor = UIColor.lightGray.cgColor
 		
+		contactDescriptionContainer.layer.cornerRadius = 8
+		contactDescriptionContainer.layer.borderWidth = 1
+		contactDescriptionContainer.layer.borderColor = UIColor.lightGray.cgColor
 		var textFields = [phoneTextField,
 											userNameTextField,
 											yearTextField,
@@ -146,7 +163,7 @@ class AddNewModelViewController: UIViewController {
 								carNameLabel
 			]
 		} else {
-			
+			imageCollectionContainer.isHidden = false
 			priceFromContainer.isHidden = true
 			priceToContainer.isHidden = true
 		}
@@ -184,10 +201,10 @@ class AddNewModelViewController: UIViewController {
 				contactInfoDescriptionTextView.text = vm.contactDescription
 				let index = Int(bodyColorItems.lastIndex(where: { (item) -> Bool in
 					return item == vm.model.bodyColored
-					}) ?? 0)
+				}) ?? 0)
 				bodyPicker.selectRow(index, inComponent: 0, animated: true)
-//				DataBa
-//				imageCollection.rx.items(cellIdentifier: "id", cellType: SliderItemCell.self)
+				//				DataBa
+				//				imageCollection.rx.items(cellIdentifier: "id", cellType: SliderItemCell.self)
 				break
 			case let .customer(vm):
 				phoneTextField.text = vm.phoneNumber
@@ -199,30 +216,87 @@ class AddNewModelViewController: UIViewController {
 				descriptionTextView.text = vm.descriptionText
 				priceFromTextField.text = String(vm.model.priceFrom)
 				priceToTextField.text = String(vm.model.priceTo)
-//				kilometerTextField.text = String(vm.kilometer)
+				//				kilometerTextField.text = String(vm.kilometer)
 				contactInfoDescriptionTextView.text = vm.contactDescription
 				let index = Int(bodyColorItems.lastIndex(where: { (item) -> Bool in
 					return item == vm.model.bodyColored
-					}) ?? 0)
+				}) ?? 0)
 				bodyPicker.selectRow(index, inComponent: 0, animated: true)
 				
 				break
 			}
 		}
 	}
+		func loadImages(){
+			print("Reload Images")
+
+				imageCollection.removeAll()
+				let viewModelItems = images.compactMap { (model) -> SliderCellItemVM in
+					return  SliderCellItemVM(model: model, editing: true)
+				}
+				let cells = viewModelItems.compactMap({ (vm) -> BEKGenericCellType in
+					return BEKGenericCollectionCell<SliderItemCell>(viewModel: vm, size:  CGSize(width: imageCollection.bounds.width - 64 , height: imageCollection.bounds.height))
+				})
+				imageCollection.push(cells: cells)
+		}
+	func loadSlider(){
+		
+		if let safeId = editingControllerType?.asAdvertiseConvertable().id {
+			DatabaseManager.shared.getImageModels(forModelId: safeId, response: { [unowned self](items) in
+				self.images = items
+			}) { (error) in
+				
+			}
+		}
+		imageCollection.onClick { [loadSlider, unowned self](type) in
+			
+			if let cell = type as? BEKGenericCollectionCell<SliderItemCell>, let imageId = cell.viewModel.model.imageId {
+				DatabaseManager.shared.delete(ImageModels: [imageId]) { [loadSlider](updated) in
+					loadSlider()
+				}
+				self.images = self.images.filter({ (item) -> Bool in
+					item.imageId != imageId
+				})
+			}
+		}
+	}
+	
+	@IBAction func addImage(_ sender: Any) {
+		let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+		alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+			self.openCamera()
+		}))
+		
+		alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+			self.openGallery()
+		}))
+		
+		alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+		
+		self.present(alert, animated: true, completion: nil)
+	}
 	
 	@IBAction func saveData(_ sender: Any) {
-		var safeID = UUID().uuidString
+		var safeID = globalSafeModelId
 		
 		if let safeModelId = editingControllerType?.asAdvertiseConvertable().id  {
+			navigationController?.setNavigationBarHidden(true, animated: false)
 			safeID = safeModelId
+			DatabaseManager.shared.delete(forIds: [safeID]) { (updated) in
+			}
+		}else {
+			
+			images.forEach { (item) in
+				DatabaseManager.shared.add(ImageModel: item) { (updated) in
+				}
+			}
 		}
 		
 		switch controllerType {
 		case .seller:
 			let bodyColored = bodyColorItems[bodyPicker.selectedRow(inComponent: 0)]
 			let model = SellerDomainModel(id: safeID,
-																		title: titleTextField.text ?? "" ,
+																		title:"",
 																		carName: carNameTextField.text ?? "",
 																		creationDate: Date(),
 																		descriptionText: descriptionLabel.text ?? "",
@@ -230,7 +304,8 @@ class AddNewModelViewController: UIViewController {
 																		phoneNumber: phoneTextField.text?.toEnDigits ?? "",
 																		price: Int16(priceTextField.text?.toEnDigits ?? "") ?? 0,
 																		userName: userNameTextField.text ?? "",
-																		kilometer: Int16(kilometerTextField.text?.toEnDigits ?? "") ?? 0, contactDesc: contactInfoDescriptionTextView.text ,
+																		kilometer: Int16(kilometerTextField.text?.toEnDigits ?? "") ?? 0,
+																		contactDesc: contactInfoDescriptionTextView.text ,
 																		yearModel: Int16(yearTextField.text?.toEnDigits ?? "") ?? 0,
 																		color: colorTextField.text ?? "",
 																		favorite: automaticSwitch.isOn,
@@ -243,10 +318,11 @@ class AddNewModelViewController: UIViewController {
 		case .customer:
 			let bodyColored = bodyColorItems[bodyPicker.selectedRow(inComponent: 0)]
 			let model = CustomerDomainModel(id: safeID,
-																			title: titleTextField.text ?? "" ,
+																			title: "" ,
 																			carName: carNameTextField.text ?? "",
 																			creationDate: Date(),
-																			descriptionText: descriptionLabel.text ?? "", contactDesc: contactInfoDescriptionTextView.text,
+																			descriptionText: descriptionLabel.text ?? "",
+																			contactDesc: contactInfoDescriptionTextView.text,
 																			bodyColored: bodyColored,
 																			phoneNumber: phoneTextField.text?.toEnDigits ?? "",
 																			userName: userNameTextField.text ?? "",
@@ -259,6 +335,39 @@ class AddNewModelViewController: UIViewController {
 				navigator?.toTabbar()
 			}
 			break
+		}
+		
+	}
+	func openCamera()
+	{
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+			let imagePicker = UIImagePickerController()
+			imagePicker.delegate = self
+			imagePicker.sourceType = UIImagePickerController.SourceType.camera
+			imagePicker.allowsEditing = false
+			self.present(imagePicker, animated: true, completion: nil)
+		}
+		else
+		{
+			let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			self.present(alert, animated: true, completion: nil)
+		}
+	}
+	func openGallery()
+	{
+		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+			let imagePicker = UIImagePickerController()
+			imagePicker.delegate = self
+			imagePicker.allowsEditing = true
+			imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+			self.present(imagePicker, animated: true, completion: nil)
+		}
+		else
+		{
+			let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			self.present(alert, animated: true, completion: nil)
 		}
 	}
 }
@@ -282,3 +391,21 @@ extension AddNewModelViewController: UIPickerViewDataSource, UIPickerViewDelegat
 	}
 }
 
+extension AddNewModelViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+	
+	//MARK:-- ImagePicker delegate
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		if let pickedImage = info[.originalImage] as? UIImage, let imageData = pickedImage.jpegData(compressionQuality: 0) {
+			if let safeModelId = editingControllerType?.asAdvertiseConvertable().id  {
+				let imageModel = ImageDomainModel(id: safeModelId, data: imageData, imageId: UUID().uuidString)
+				DatabaseManager.shared.add(ImageModel: imageModel) { [loadSlider](updated) in
+					loadSlider()
+				}
+			}else {
+				let imageModel = ImageDomainModel(id: globalSafeModelId, data: imageData, imageId: UUID().uuidString)
+				images.append(imageModel)
+			}
+		}
+		picker.dismiss(animated: true, completion: nil)
+	}
+}

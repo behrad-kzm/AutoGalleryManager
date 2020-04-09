@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B7392BC8A773CD718B87A2A8EACC0420"
-               BuildableName = "libStellar.a"
+               BuildableName = "Stellar.framework"
                BlueprintName = "Stellar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

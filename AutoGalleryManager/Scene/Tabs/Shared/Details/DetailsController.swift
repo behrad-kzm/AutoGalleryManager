@@ -8,6 +8,7 @@
 
 import UIKit
 import BEKMultiCellTable
+
 import CoreDataManager
 class DetailsController: UIViewController {
 	
@@ -99,6 +100,7 @@ extension DetailsController {
 		callButtonContainer.clipsToBounds = true
 		
 		if let safeID = controllerType.asAdvertiseConvertable().id{
+			addSliderCell(modelID: safeID)
 			addSwitchCell(status: controllerType.asAdvertiseConvertable().favorite, modelID: safeID)
 		}
 		switch controllerType {
@@ -153,6 +155,7 @@ extension DetailsController {
 	}
 	
 	func addSwitchCell(status: Bool, modelID: String){
+		
 		let cell = BEKGenericCell<SwitchCell>(viewModel: SwitchCellVM(isOn: status, delegate: {(newState) in
 			
 			DatabaseManager.shared.set(answer: newState, itemId: modelID, completion: { (completed) in
@@ -172,5 +175,17 @@ extension DetailsController {
 		}))
 		
 		tableView?.push(cell: cell)
+	}
+	
+	func addSliderCell(modelID: String){
+		DatabaseManager.shared.getImageModels(forModelId: modelID, response: { [tableView](items) in
+			let viewModelItems = items.compactMap { (model) -> SliderCellItemVM in
+				return  SliderCellItemVM(model: model, editing: false)
+			}
+			let cell = BEKGenericCell<SliderCell>(viewModel: SliderVM(items: viewModelItems))
+			tableView?.push(cell: cell)
+		}) { (error) in
+			
+		}
 	}
 }

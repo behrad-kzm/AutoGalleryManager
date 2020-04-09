@@ -1,13 +1,17 @@
 PODS:
   - BEKMultiCellTable (1.0.0)
+  - Differentiator (4.0.1)
   - FaveButton (3.2.1)
   - Hero (1.5.0)
   - IQKeyboardManagerSwift (6.5.5)
   - MHSoftUI (0.1.0)
-  - RAImagePicker (0.1.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -19,19 +23,20 @@ DEPENDENCIES:
   - Hero
   - IQKeyboardManagerSwift
   - MHSoftUI
-  - RAImagePicker
   - RxCocoa
+  - RxDataSources
   - RxSwift
   - Stellar (from `https://github.com/AugustRush/Stellar.git`)
 
 SPEC REPOS:
   trunk:
+    - Differentiator
     - FaveButton
     - Hero
     - IQKeyboardManagerSwift
     - MHSoftUI
-    - RAImagePicker
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
 
@@ -43,7 +48,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   BEKMultiCellTable:
-    :commit: c327552a8eea86fb87bad7f0c7d40059a00583b2
+    :commit: 24aa7a02cea7121504bc50c8c1a287fe33d6b5f6
     :git: https://github.com/behrad-kzm/BEKMultiCellTable.git
   Stellar:
     :commit: 6c192427621f8b52f3b155d0088e1eabd156abe0
@@ -51,16 +56,17 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BEKMultiCellTable: d265218c22d9cfcdbc6632ae52348ec6b8580663
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   MHSoftUI: efa0704cbc30d118bbede29f19c35efeb0c8f4c3
-  RAImagePicker: 8eb87f0e8649bee1a3bb51198dd1d599134802dc
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   Stellar: df980becd194eeb62d623af097582da0ef2219b9
 
-PODFILE CHECKSUM: 18e9f4a62fbca3bf2e0977dabb272c251219151b
+PODFILE CHECKSUM: d7bc08268a2f3a04aa4aa0926b80b8fb228314f2
 
 COCOAPODS: 1.9.1

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE60DBD9570ADE88CAA395D9BF7870B4"
-               BuildableName = "libMHSoftUI.a"
+               BuildableName = "MHSoftUI.framework"
                BlueprintName = "MHSoftUI"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

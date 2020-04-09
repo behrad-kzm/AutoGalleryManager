@@ -91,7 +91,20 @@
 		13C2D3F524352B0D00BC6A8B /* CommonInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3F324352B0D00BC6A8B /* CommonInfoCell.swift */; };
 		13C2D3F624352B0D00BC6A8B /* CommonInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C2D3F424352B0D00BC6A8B /* CommonInfoCell.xib */; };
 		13C2D3F824352C7700BC6A8B /* CommonInfoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C2D3F724352C7700BC6A8B /* CommonInfoVM.swift */; };
-		2E798E91CC61A243751BD9FA /* libPods-AutoGalleryManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */; };
+		13EB90A1243B260100A1A47C /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13EB90A0243B260100A1A47C /* test.jpg */; };
+		13EB90AB243B633600A1A47C /* BEKMultiCellCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 13EB90A9243B633600A1A47C /* BEKMultiCellCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13EB90AE243B633600A1A47C /* BEKMultiCellCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EB90A7243B633600A1A47C /* BEKMultiCellCollection.framework */; };
+		13EB90AF243B633600A1A47C /* BEKMultiCellCollection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13EB90A7243B633600A1A47C /* BEKMultiCellCollection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13EB90C0243B672D00A1A47C /* BEKGenericCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90BA243B672C00A1A47C /* BEKGenericCellType.swift */; };
+		13EB90C1243B672D00A1A47C /* BEKCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90BB243B672C00A1A47C /* BEKCollectionDelegate.swift */; };
+		13EB90C2243B672D00A1A47C /* BEKGenericCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90BC243B672D00A1A47C /* BEKGenericCollectionCell.swift */; };
+		13EB90C3243B672D00A1A47C /* BEKDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90BD243B672D00A1A47C /* BEKDataSource.swift */; };
+		13EB90C4243B672D00A1A47C /* BEKMultiCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90BE243B672D00A1A47C /* BEKMultiCellCollection.swift */; };
+		13EB90C5243B672D00A1A47C /* BEKBindableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90BF243B672D00A1A47C /* BEKBindableCell.swift */; };
+		13EB90C7243B6A5700A1A47C /* SliderCell+BEKCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90C6243B6A5700A1A47C /* SliderCell+BEKCollection.swift */; };
+		13EB90CA243B8E3D00A1A47C /* SliderCellItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90C9243B8E3D00A1A47C /* SliderCellItemVM.swift */; };
+		13EB90CB243B97B700A1A47C /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13EB90A0243B260100A1A47C /* test.jpg */; };
+		9AD1985A5799CD7905A2C016 /* Pods_AutoGalleryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E6BE45B5C91B6AD15927EF /* Pods_AutoGalleryManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +129,13 @@
 			remoteGlobalIDString = 131C7AC124309F2E00782708;
 			remoteInfo = Domain;
 		};
+		13EB90AC243B633600A1A47C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13BFA448242F7000006B726A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13EB90A6243B633600A1A47C;
+			remoteInfo = BEKMultiCellCollection;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,6 +145,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				13EB90AF243B633600A1A47C /* BEKMultiCellCollection.framework in Embed Frameworks */,
 				131C7ACA24309F2E00782708 /* Domain.framework in Embed Frameworks */,
 				131C7AB824309F1A00782708 /* CoreDataManager.framework in Embed Frameworks */,
 			);
@@ -173,7 +194,7 @@
 		136F87B82439DAAF0094A672 /* ImageModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		136F87BA2439DACE0094A672 /* ImageModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		136F87BC2439DB010094A672 /* ImageDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDomainModel.swift; sourceTree = "<group>"; };
-		13BFA450242F7000006B726A /* AutoGalleryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoGalleryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13BFA450242F7000006B726A /* Autolchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BFA453242F7000006B726A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13BFA45F242F700D006B726A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13BFA464242F700D006B726A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,9 +249,21 @@
 		13C2D3F324352B0D00BC6A8B /* CommonInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInfoCell.swift; sourceTree = "<group>"; };
 		13C2D3F424352B0D00BC6A8B /* CommonInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonInfoCell.xib; sourceTree = "<group>"; };
 		13C2D3F724352C7700BC6A8B /* CommonInfoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInfoVM.swift; sourceTree = "<group>"; };
-		47C62AA15C897B4EE23280BD /* Pods-AutoGalleryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.debug.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.debug.xcconfig"; sourceTree = "<group>"; };
-		A8F8052394E93069D2A723E5 /* Pods-AutoGalleryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.release.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.release.xcconfig"; sourceTree = "<group>"; };
-		C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AutoGalleryManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13EB90A0243B260100A1A47C /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		13EB90A7243B633600A1A47C /* BEKMultiCellCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BEKMultiCellCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13EB90A9243B633600A1A47C /* BEKMultiCellCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEKMultiCellCollection.h; sourceTree = "<group>"; };
+		13EB90AA243B633600A1A47C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13EB90BA243B672C00A1A47C /* BEKGenericCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEKGenericCellType.swift; sourceTree = "<group>"; };
+		13EB90BB243B672C00A1A47C /* BEKCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEKCollectionDelegate.swift; sourceTree = "<group>"; };
+		13EB90BC243B672D00A1A47C /* BEKGenericCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEKGenericCollectionCell.swift; sourceTree = "<group>"; };
+		13EB90BD243B672D00A1A47C /* BEKDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEKDataSource.swift; sourceTree = "<group>"; };
+		13EB90BE243B672D00A1A47C /* BEKMultiCellCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEKMultiCellCollection.swift; sourceTree = "<group>"; };
+		13EB90BF243B672D00A1A47C /* BEKBindableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEKBindableCell.swift; sourceTree = "<group>"; };
+		13EB90C6243B6A5700A1A47C /* SliderCell+BEKCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SliderCell+BEKCollection.swift"; sourceTree = "<group>"; };
+		13EB90C9243B8E3D00A1A47C /* SliderCellItemVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCellItemVM.swift; sourceTree = "<group>"; };
+		325E90B0E070BED32F1BF6E8 /* Pods-AutoGalleryManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.debug.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.debug.xcconfig"; sourceTree = "<group>"; };
+		73E6BE45B5C91B6AD15927EF /* Pods_AutoGalleryManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoGalleryManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB2496BF5E7574CC50565B69 /* Pods-AutoGalleryManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoGalleryManager.release.xcconfig"; path = "Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,8 +287,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				131C7AC924309F2E00782708 /* Domain.framework in Frameworks */,
-				2E798E91CC61A243751BD9FA /* libPods-AutoGalleryManager.a in Frameworks */,
 				131C7AB724309F1A00782708 /* CoreDataManager.framework in Frameworks */,
+				13EB90AE243B633600A1A47C /* BEKMultiCellCollection.framework in Frameworks */,
+				9AD1985A5799CD7905A2C016 /* Pods_AutoGalleryManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13EB90A4243B633600A1A47C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				131C7ADA2430FD9E00782708 /* SasCoreData.swift */,
+				13EB90A0243B260100A1A47C /* test.jpg */,
 				131C7AD92430FCC900782708 /* Models */,
 				131C7AB224309F1A00782708 /* CoreDataManager.h */,
 				131C7AB324309F1A00782708 /* Info.plist */,
@@ -352,18 +394,20 @@
 				13BFA452242F7000006B726A /* AutoGalleryManager */,
 				131C7AB124309F1A00782708 /* CoreDataManager */,
 				131C7AC324309F2E00782708 /* Domain */,
+				13EB90A8243B633600A1A47C /* BEKMultiCellCollection */,
 				13BFA451242F7000006B726A /* Products */,
 				F0145D69677B5C1EDA83A77D /* Pods */,
-				5126BAB54F004B96A50F14FE /* Frameworks */,
+				9DF205D1B671D34943629902 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		13BFA451242F7000006B726A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13BFA450242F7000006B726A /* AutoGalleryManager.app */,
+				13BFA450242F7000006B726A /* Autolchi.app */,
 				131C7AB024309F1A00782708 /* CoreDataManager.framework */,
 				131C7AC224309F2E00782708 /* Domain.framework */,
+				13EB90A7243B633600A1A47C /* BEKMultiCellCollection.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -581,12 +625,12 @@
 		13C2D3E42434DCC700BC6A8B /* SliderComponent */ = {
 			isa = PBXGroup;
 			children = (
+				13EB90C8243B8E2800A1A47C /* Item */,
 				136F87B22439D7190094A672 /* SWInflateLayout.swift */,
 				136F87AC2439CE710094A672 /* SliderCell.swift */,
 				136F87AD2439CE710094A672 /* SliderCell.xib */,
 				136F87B02439D6520094A672 /* SliderVM.swift */,
-				136F87B42439D8780094A672 /* SliderItemCell.swift */,
-				136F87B52439D8780094A672 /* SliderItemCell.xib */,
+				13EB90C6243B6A5700A1A47C /* SliderCell+BEKCollection.swift */,
 			);
 			path = SliderComponent;
 			sourceTree = "<group>";
@@ -601,10 +645,43 @@
 			path = CommonInfoCell;
 			sourceTree = "<group>";
 		};
-		5126BAB54F004B96A50F14FE /* Frameworks */ = {
+		13EB90A8243B633600A1A47C /* BEKMultiCellCollection */ = {
 			isa = PBXGroup;
 			children = (
-				C6B5E81583E77D9D8C767A4B /* libPods-AutoGalleryManager.a */,
+				13EB90B3243B658E00A1A47C /* Classes */,
+				13EB90A9243B633600A1A47C /* BEKMultiCellCollection.h */,
+				13EB90AA243B633600A1A47C /* Info.plist */,
+			);
+			path = BEKMultiCellCollection;
+			sourceTree = "<group>";
+		};
+		13EB90B3243B658E00A1A47C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				13EB90BF243B672D00A1A47C /* BEKBindableCell.swift */,
+				13EB90BB243B672C00A1A47C /* BEKCollectionDelegate.swift */,
+				13EB90BD243B672D00A1A47C /* BEKDataSource.swift */,
+				13EB90BA243B672C00A1A47C /* BEKGenericCellType.swift */,
+				13EB90BC243B672D00A1A47C /* BEKGenericCollectionCell.swift */,
+				13EB90BE243B672D00A1A47C /* BEKMultiCellCollection.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		13EB90C8243B8E2800A1A47C /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				136F87B42439D8780094A672 /* SliderItemCell.swift */,
+				136F87B52439D8780094A672 /* SliderItemCell.xib */,
+				13EB90C9243B8E3D00A1A47C /* SliderCellItemVM.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		9DF205D1B671D34943629902 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73E6BE45B5C91B6AD15927EF /* Pods_AutoGalleryManager.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -612,8 +689,8 @@
 		F0145D69677B5C1EDA83A77D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				47C62AA15C897B4EE23280BD /* Pods-AutoGalleryManager.debug.xcconfig */,
-				A8F8052394E93069D2A723E5 /* Pods-AutoGalleryManager.release.xcconfig */,
+				325E90B0E070BED32F1BF6E8 /* Pods-AutoGalleryManager.debug.xcconfig */,
+				AB2496BF5E7574CC50565B69 /* Pods-AutoGalleryManager.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -634,6 +711,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				131C7AC624309F2E00782708 /* Domain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13EB90A2243B633600A1A47C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13EB90AB243B633600A1A47C /* BEKMultiCellCollection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,23 +767,42 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13BFA467242F700D006B726A /* Build configuration list for PBXNativeTarget "AutoGalleryManager" */;
 			buildPhases = (
-				FCE2EE0E5BC2740979E83480 /* [CP] Check Pods Manifest.lock */,
+				35BC653C05A0E9068E01812B /* [CP] Check Pods Manifest.lock */,
 				13BFA44C242F7000006B726A /* Sources */,
 				13BFA44D242F7000006B726A /* Frameworks */,
 				13BFA44E242F7000006B726A /* Resources */,
 				131C7ABC24309F1A00782708 /* Embed Frameworks */,
-				C12B152602991A1D0F8AE2FF /* [CP] Copy Pods Resources */,
+				00F6BBC42619ACD235CFEE3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				131C7AB624309F1A00782708 /* PBXTargetDependency */,
 				131C7AC824309F2E00782708 /* PBXTargetDependency */,
+				13EB90AD243B633600A1A47C /* PBXTargetDependency */,
 			);
 			name = AutoGalleryManager;
 			productName = AutoGalleryManager;
-			productReference = 13BFA450242F7000006B726A /* AutoGalleryManager.app */;
+			productReference = 13BFA450242F7000006B726A /* Autolchi.app */;
 			productType = "com.apple.product-type.application";
+		};
+		13EB90A6243B633600A1A47C /* BEKMultiCellCollection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13EB90B0243B633600A1A47C /* Build configuration list for PBXNativeTarget "BEKMultiCellCollection" */;
+			buildPhases = (
+				13EB90A2243B633600A1A47C /* Headers */,
+				13EB90A3243B633600A1A47C /* Sources */,
+				13EB90A4243B633600A1A47C /* Frameworks */,
+				13EB90A5243B633600A1A47C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BEKMultiCellCollection;
+			productName = BEKMultiCellCollection;
+			productReference = 13EB90A7243B633600A1A47C /* BEKMultiCellCollection.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -720,6 +824,10 @@
 					13BFA44F242F7000006B726A = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					13EB90A6243B633600A1A47C = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
 				};
 			};
 			buildConfigurationList = 13BFA44B242F7000006B726A /* Build configuration list for PBXProject "AutoGalleryManager" */;
@@ -738,6 +846,7 @@
 				13BFA44F242F7000006B726A /* AutoGalleryManager */,
 				131C7AAF24309F1A00782708 /* CoreDataManager */,
 				131C7AC124309F2E00782708 /* Domain */,
+				13EB90A6243B633600A1A47C /* BEKMultiCellCollection */,
 			);
 		};
 /* End PBXProject section */
@@ -747,6 +856,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EB90A1243B260100A1A47C /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,33 +890,41 @@
 				13BFA4EF242F8310006B726A /* LaunchScreen.storyboard in Resources */,
 				13C2D3DB2434BEAC00BC6A8B /* IRANSans.ttf in Resources */,
 				13C2D3D72434BEAC00BC6A8B /* IRANSans_Bold.ttf in Resources */,
+				13EB90CB243B97B700A1A47C /* test.jpg in Resources */,
 				13BFA4EC242F7FCE006B726A /* SplashSound.mp3 in Resources */,
 				13C2D3CE24349B3700BC6A8B /* TitleCell.xib in Resources */,
 				13BFA4D5242F7533006B726A /* AdvertiseCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		13EB90A5243B633600A1A47C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C12B152602991A1D0F8AE2FF /* [CP] Copy Pods Resources */ = {
+		00F6BBC42619ACD235CFEE3D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FCE2EE0E5BC2740979E83480 /* [CP] Check Pods Manifest.lock */ = {
+		35BC653C05A0E9068E01812B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -901,8 +1019,23 @@
 				13C2D3E72434DD2700BC6A8B /* DetailsController.swift in Sources */,
 				13C2D3F824352C7700BC6A8B /* CommonInfoVM.swift in Sources */,
 				13C2D3F524352B0D00BC6A8B /* CommonInfoCell.swift in Sources */,
+				13EB90C7243B6A5700A1A47C /* SliderCell+BEKCollection.swift in Sources */,
 				13BFA4D4242F7533006B726A /* AdvertiseCell.swift in Sources */,
 				131C7AD22430F79800782708 /* DataModels.xcdatamodeld in Sources */,
+				13EB90CA243B8E3D00A1A47C /* SliderCellItemVM.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13EB90A3243B633600A1A47C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13EB90C2243B672D00A1A47C /* BEKGenericCollectionCell.swift in Sources */,
+				13EB90C0243B672D00A1A47C /* BEKGenericCellType.swift in Sources */,
+				13EB90C4243B672D00A1A47C /* BEKMultiCellCollection.swift in Sources */,
+				13EB90C5243B672D00A1A47C /* BEKBindableCell.swift in Sources */,
+				13EB90C1243B672D00A1A47C /* BEKCollectionDelegate.swift in Sources */,
+				13EB90C3243B672D00A1A47C /* BEKDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +1057,11 @@
 			target = 131C7AC124309F2E00782708 /* Domain */;
 			targetProxy = 1333DAFA2433A2A100D8D98D /* PBXContainerItemProxy */;
 		};
+		13EB90AD243B633600A1A47C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13EB90A6243B633600A1A47C /* BEKMultiCellCollection */;
+			targetProxy = 13EB90AC243B633600A1A47C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -939,6 +1077,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CoreDataManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -967,6 +1106,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CoreDataManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -996,6 +1136,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1026,6 +1167,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1158,20 +1300,20 @@
 		};
 		13BFA468242F700D006B726A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47C62AA15C897B4EE23280BD /* Pods-AutoGalleryManager.debug.xcconfig */;
+			baseConfigurationReference = 325E90B0E070BED32F1BF6E8 /* Pods-AutoGalleryManager.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				INFOPLIST_FILE = AutoGalleryManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.AutoGalleryManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Autolchi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1179,22 +1321,81 @@
 		};
 		13BFA469242F700D006B726A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8F8052394E93069D2A723E5 /* Pods-AutoGalleryManager.release.xcconfig */;
+			baseConfigurationReference = AB2496BF5E7574CC50565B69 /* Pods-AutoGalleryManager.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				INFOPLIST_FILE = AutoGalleryManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.AutoGalleryManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Autolchi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		13EB90B1243B633600A1A47C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7FQDK9Y97S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BEKMultiCellCollection/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.components.BEKMultiCellCollection;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		13EB90B2243B633600A1A47C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7FQDK9Y97S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BEKMultiCellCollection/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.components.BEKMultiCellCollection;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1233,6 +1434,15 @@
 			buildConfigurations = (
 				13BFA468242F700D006B726A /* Debug */,
 				13BFA469242F700D006B726A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13EB90B0243B633600A1A47C /* Build configuration list for PBXNativeTarget "BEKMultiCellCollection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13EB90B1243B633600A1A47C /* Debug */,
+				13EB90B2243B633600A1A47C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

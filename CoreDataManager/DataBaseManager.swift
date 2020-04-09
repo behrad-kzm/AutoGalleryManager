@@ -9,28 +9,68 @@
 import Foundation
 import CoreData
 import Domain
-
+import UIKit
 public class DatabaseManager {
-	
 	
 	private(set) lazy var sellerDB = SasCoreData<SellerModel>()
 	private(set) lazy var customerDB = SasCoreData<CustomerModel>()
+	private(set) lazy var imageDB = SasCoreData<ImageModel>()
 	public static var shared = {
 		return DatabaseManager()
 	}()
+	
+	public func add(ImageModel image: ImageDomainModel, completion: ((Bool) -> Void)?) {
+		
+		let imageModelDB = NSEntityDescription.insertNewObject(forEntityName: "ImageModel", into: imageDB.persistentContainer.viewContext) as! ImageModel
+		
+		imageModelDB.setValue(image.id, forKey: "id")
+		imageModelDB.setValue(image.imageId, forKey: "imageId")
+		imageModelDB.setValue(image.data, forKey: "data")
+		
+		imageDB.update(imageModelDB) {[completion] (completed) in
+			if completion != nil {
+				completion!(completed)
+			}
+		}
+	}
+	
+	public func getImageModels(forModelId modelId: String, response: ([ImageDomainModel]) -> Void, error: (Error) -> Void) {
+		
+		let predicate = NSPredicate(format: "id == %@", modelId)
+				imageDB.getAll(predicate: predicate) { [response, error] (result) in
+					switch result {
+					case .success(let resp):
+						response(resp.compactMap{$0.asDomain()})
+					case .failure(let err):
+						error(err)
+					}
+				}
+	}
+	
+	public func delete(ImageModels imageModels: [String], completion: ((Bool) -> Void)?) {
+		
+		let predicate = NSPredicate(format: "ANY imageId IN %@", imageModels)
+		imageDB.batchDelete(predicate: predicate) { (updated) in
+			if completion != nil {
+				completion!(updated)
+			}
+		}
+	}
 	
 	public func add(Customer customer: CustomerDomainModel, completion: ((Bool) -> Void)?) {
 		
 		let customerData = NSEntityDescription.insertNewObject(forEntityName: "CustomerModel", into: customerDB.persistentContainer.viewContext) as! CustomerModel
 		
 		customerData.setValue(customer.id, forKey: "id")
-		customerData.setValue(customer.title, forKey: "title")
+//		customerData.setValue(customer.title, forKey: "title")
 		customerData.setValue(customer.carName, forKey: "carName")
 		customerData.setValue(customer.creationDate, forKey: "creationDate")
 		customerData.setValue(customer.descriptionText, forKey: "descriptionText")
 		customerData.setValue(customer.bodyColored.rawValue, forKey: "bodyColored")
+		customerData.setValue(customer.contactDescription, forKey: "contactDescription")
 		customerData.setValue(customer.phoneNumber, forKey: "phoneNumber")
 		customerData.setValue(customer.priceTo, forKey: "priceTo")
+		customerData.setValue(customer.favorite, forKey: "favorite")
 		customerData.setValue(customer.priceFrom, forKey: "priceFrom")
 		customerData.setValue(customer.userName, forKey: "userName")
 		customerData.setValue(customer.year, forKey: "year")
@@ -60,7 +100,7 @@ public class DatabaseManager {
 		sellerData.setValue(seller.contactDescription, forKey: "contactDescription")
 		sellerData.setValue(seller.brandName, forKey: "brandName")
 		sellerData.setValue(seller.color, forKey: "color")
-		sellerData.setValue(seller.title, forKey: "title")
+//		sellerData.setValue(seller.title, forKey: "title")
 		
 		
 		sellerDB.update(sellerData) {[completion] (completed) in
@@ -123,7 +163,7 @@ public class DatabaseManager {
 			switch result {
 			case .success(let allNotifs):
 				allNotifs.forEach { (notif) in
-					//					notif.favorite [TODO] -force
+					notif.favorite = answer
 					self.customerDB.update(notif) {[/*manager = AppAnalytics.shared,*/ completion] (completed) in
 						//            manager.log(eventName: "question_answered", parameters: ["questionEvent": notif.asSimpleNotification().eventType.asEventProtocol().getName(), "questionAnswer": answer.rawValue])
 						if completion != nil {
@@ -152,10 +192,6 @@ public class DatabaseManager {
 				error(err)
 			}
 		}
-	}
-	
-	func insert(ImagesWithModel: String){
-		
 	}
 }
 extension Array {

@@ -1,4 +1,4 @@
-module MHSoftUI {
+framework module MHSoftUI {
   umbrella header "MHSoftUI-umbrella.h"
 
   export *

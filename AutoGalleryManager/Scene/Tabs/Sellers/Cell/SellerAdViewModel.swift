@@ -27,9 +27,18 @@ struct SellerAdViewModel {
 }
 extension SellerDomainModel {
 	func asViewModel() -> SellerAdViewModel {
-		let yearString = "Model".localize() + " \(yearModel)"
+		let yearString = String(yearModel)
 		let priceString = "\(price) " + "Million".localize()
-		let titleText = title.isEmpty ? "\(brandName) \(carName) \(bodyColored.getTitle()) \(color) \(yearString)" : title
+		let titles = [brandName, carName, yearString].filter { (item) -> Bool in
+			return !item.isEmpty
+		}
+		
+		var titleText = ""
+		titles.forEach { (item) in
+			
+			titleText = titleText.isEmpty ? item : String.localizedStringWithFormat("%@ ، %@", item , titleText)
+		}
+		
 		return SellerAdViewModel(model: self, title: titleText, brandName: brandName, carName: carName, price: priceString, color: color, id: id, favorite: favorite, bodyColored: bodyColored.getTitle(), yearModel: yearString, descriptionText: descriptionText, userName: userName, phoneNumber: phoneNumber, kilometer: kilometer, contactDescription: contactDescription)
 	}
 }

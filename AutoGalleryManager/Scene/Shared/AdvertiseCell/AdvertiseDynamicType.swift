@@ -43,6 +43,7 @@ enum AdvertiseFlatViewModelType {
 protocol AdvertiseConvertable {
 	var id: String? { get }
 	var phoneNumber: String { get }
+	var contactDescription: String { get }
 	var userName: String { get }
 	var favorite: Bool { get }
 	var title: String { get }
