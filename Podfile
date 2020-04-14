@@ -13,6 +13,9 @@ target 'AutoGalleryManager' do
 	pod 'MHSoftUI'
 	pod 'FaveButton'
 	pod 'RxDataSources'
+	pod 'BEKListKit'
+	pod 'SwiftLocalNotification'
+	
 	# Pods for AutoGalleryManager
 	
 end

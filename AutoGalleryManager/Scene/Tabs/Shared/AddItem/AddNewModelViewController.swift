@@ -15,6 +15,7 @@ import BEKMultiCellCollection
 //import RxDataSources
 class AddNewModelViewController: UIViewController {
 	
+	@IBOutlet weak var innerColorContainer: UIStackView!
 	@IBOutlet weak var gearboxMainContainer: UIStackView!
 	@IBOutlet weak var colorMainContainer: UIStackView!
 	@IBOutlet weak var brandMainContainer: UIStackView!
@@ -28,6 +29,7 @@ class AddNewModelViewController: UIViewController {
 	@IBOutlet weak var priceFromContainer: UIStackView!
 	@IBOutlet weak var priceToContainer: UIStackView!
 	
+	@IBOutlet weak var innerColorTextField: UITextField!
 	@IBOutlet weak var phoneTextField: UITextField!
 	@IBOutlet weak var userNameTextField: UITextField!
 	@IBOutlet weak var yearTextField: UITextField!
@@ -44,6 +46,7 @@ class AddNewModelViewController: UIViewController {
 	@IBOutlet weak var contactInfoDescriptionTextView: UITextView!
 	@IBOutlet weak var bodyPicker: UIPickerView!
 	
+	@IBOutlet weak var innerColorLabel: UILabel!
 	@IBOutlet weak var phoneLabel: UILabel!
 	@IBOutlet weak var userNameLabel: UILabel!
 	@IBOutlet weak var yearLabel: UILabel!
@@ -102,14 +105,16 @@ class AddNewModelViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		navigationController?.setNavigationBarHidden(false, animated: false)
+
 		bodyPicker.dataSource = self
 		bodyPicker.delegate = self
 		mainScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 64, right: 0)
 		setupUI()
 	}
+
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+
 		loadSlider()
 	}
 	func setupUI() { //Fill here if needed
@@ -128,6 +133,7 @@ class AddNewModelViewController: UIViewController {
 		var textFields = [phoneTextField,
 											userNameTextField,
 											yearTextField,
+											innerColorTextField,
 											colorTextField,
 											priceTextField,
 											carNameTextField,
@@ -137,6 +143,7 @@ class AddNewModelViewController: UIViewController {
 									userNameLabel,
 									yearLabel,
 									colorLabel,
+									innerColorLabel,
 									priceLabel,
 									carNameLabel,
 									brandLabel]
@@ -145,7 +152,7 @@ class AddNewModelViewController: UIViewController {
 			imageCollectionContainer.isHidden = true
 			largeTitleLabel.text = "خریدار جدید"
 			colorMainContainer.isHidden = true
-			brandMainContainer.isHidden = true
+			innerColorContainer.isHidden = true
 			sellerPriceContainer.isHidden = true
 			colorMainContainer.isHidden = true
 			kilometerMainContainer.isHidden = true
@@ -191,6 +198,7 @@ class AddNewModelViewController: UIViewController {
 				userNameTextField.text = vm.userName
 				yearTextField.text = String(vm.model.yearModel)
 				colorTextField.text = vm.color
+				innerColorTextField.text = vm.innerColor
 				priceTextField.text = String(vm.model.price)
 				carNameTextField.text = vm.carName
 				brandTextField.text = vm.brandName
@@ -280,7 +288,7 @@ class AddNewModelViewController: UIViewController {
 		var safeID = globalSafeModelId
 		
 		if let safeModelId = editingControllerType?.asAdvertiseConvertable().id  {
-			navigationController?.setNavigationBarHidden(true, animated: false)
+
 			safeID = safeModelId
 			DatabaseManager.shared.delete(forIds: [safeID]) { (updated) in
 			}
@@ -302,12 +310,13 @@ class AddNewModelViewController: UIViewController {
 																		descriptionText: descriptionLabel.text ?? "",
 																		bodyColored: bodyColored,
 																		phoneNumber: phoneTextField.text?.toEnDigits ?? "",
-																		price: Int16(priceTextField.text?.toEnDigits ?? "") ?? 0,
+																		price: Int64(priceTextField.text?.toEnDigits ?? "") ?? 0,
 																		userName: userNameTextField.text ?? "",
-																		kilometer: Int16(kilometerTextField.text?.toEnDigits ?? "") ?? 0,
+																		kilometer: Int64(kilometerTextField.text?.toEnDigits ?? "") ?? 0,
 																		contactDesc: contactInfoDescriptionTextView.text ,
 																		yearModel: Int16(yearTextField.text?.toEnDigits ?? "") ?? 0,
 																		color: colorTextField.text ?? "",
+																		innerColor: innerColorTextField.text ?? "",
 																		favorite: automaticSwitch.isOn,
 																		brandName: brandTextField.text ?? "")
 			
@@ -323,11 +332,12 @@ class AddNewModelViewController: UIViewController {
 																			creationDate: Date(),
 																			descriptionText: descriptionLabel.text ?? "",
 																			contactDesc: contactInfoDescriptionTextView.text,
+																			brandName: brandTextField.text ?? "",
 																			bodyColored: bodyColored,
 																			phoneNumber: phoneTextField.text?.toEnDigits ?? "",
 																			userName: userNameTextField.text ?? "",
-																			priceFrom: Int16(priceFromTextField.text?.toEnDigits ?? "") ?? 0,
-																			priceTo: Int16(priceToTextField.text?.toEnDigits ?? "") ?? 0,
+																			priceFrom: Int64(priceFromTextField.text?.toEnDigits ?? "") ?? 0,
+																			priceTo: Int64(priceToTextField.text?.toEnDigits ?? "") ?? 0,
 																			favorite: automaticSwitch.isOn,
 																			year: Int16(yearTextField.text?.toEnDigits ?? "") ?? 0)
 			
@@ -359,7 +369,7 @@ class AddNewModelViewController: UIViewController {
 		if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
 			let imagePicker = UIImagePickerController()
 			imagePicker.delegate = self
-			imagePicker.allowsEditing = true
+			imagePicker.allowsEditing = false
 			imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
 			self.present(imagePicker, animated: true, completion: nil)
 		}

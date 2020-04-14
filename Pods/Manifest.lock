@@ -1,4 +1,5 @@
 PODS:
+  - BEKListKit (1.0.3)
   - BEKMultiCellTable (1.0.0)
   - Differentiator (4.0.1)
   - FaveButton (3.2.1)
@@ -16,8 +17,10 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - Stellar (0.67)
+  - SwiftLocalNotification (0.1.2)
 
 DEPENDENCIES:
+  - BEKListKit
   - BEKMultiCellTable (from `https://github.com/behrad-kzm/BEKMultiCellTable.git`)
   - FaveButton
   - Hero
@@ -27,9 +30,11 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift
   - Stellar (from `https://github.com/AugustRush/Stellar.git`)
+  - SwiftLocalNotification
 
 SPEC REPOS:
   trunk:
+    - BEKListKit
     - Differentiator
     - FaveButton
     - Hero
@@ -39,6 +44,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - SwiftLocalNotification
 
 EXTERNAL SOURCES:
   BEKMultiCellTable:
@@ -55,6 +61,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/AugustRush/Stellar.git
 
 SPEC CHECKSUMS:
+  BEKListKit: eced55022c40444e55975752a03595751286e123
   BEKMultiCellTable: d265218c22d9cfcdbc6632ae52348ec6b8580663
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FaveButton: 93cfebf6030336fa7653fad2068c3152ed668b39
@@ -66,7 +73,8 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   Stellar: df980becd194eeb62d623af097582da0ef2219b9
+  SwiftLocalNotification: d824608f6e9ee98a0f9081c9dc1e236160109ebe
 
-PODFILE CHECKSUM: d7bc08268a2f3a04aa4aa0926b80b8fb228314f2
+PODFILE CHECKSUM: baa946f458681c6de6ab9b744bb1a57a64b957bf
 
 COCOAPODS: 1.9.1

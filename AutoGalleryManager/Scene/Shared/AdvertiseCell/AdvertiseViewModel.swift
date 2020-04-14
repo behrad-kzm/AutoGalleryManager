@@ -12,4 +12,5 @@ struct AdvertiseViewModel {
 	let imageName: String
 	let subtitle: String
 	let price: String
+	let dateString: String
 }

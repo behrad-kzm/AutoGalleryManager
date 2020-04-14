@@ -74,3 +74,22 @@ extension Array where Element == CustomerAdViewModel {
 		}
 	}
 }
+extension Int64{
+	var asPrice: String {
+		let formatter = NumberFormatter()
+		formatter.numberStyle = NumberFormatter.Style.decimal
+		let amount = self
+		let formattedString = formatter.string(for: amount)
+		return formattedString ?? "--"
+	}
+}
+
+extension Date {
+	func asShamsiString() -> String {
+		let formatter = DateFormatter()
+		formatter.calendar = Calendar(identifier: .persian)
+		formatter.dateFormat = "yyyy/MM/dd"
+		
+		return formatter.string(from: self)
+	}
+}

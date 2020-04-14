@@ -63,6 +63,7 @@ public class DatabaseManager {
 		
 		customerData.setValue(customer.id, forKey: "id")
 //		customerData.setValue(customer.title, forKey: "title")
+		customerData.setValue(customer.brandName, forKey: "brandName")
 		customerData.setValue(customer.carName, forKey: "carName")
 		customerData.setValue(customer.creationDate, forKey: "creationDate")
 		customerData.setValue(customer.descriptionText, forKey: "descriptionText")
@@ -100,6 +101,7 @@ public class DatabaseManager {
 		sellerData.setValue(seller.contactDescription, forKey: "contactDescription")
 		sellerData.setValue(seller.brandName, forKey: "brandName")
 		sellerData.setValue(seller.color, forKey: "color")
+		sellerData.setValue(seller.innerColor, forKey: "innerColor")
 //		sellerData.setValue(seller.title, forKey: "title")
 		
 		

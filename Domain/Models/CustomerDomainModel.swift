@@ -11,14 +11,15 @@ public struct CustomerDomainModel {
 	public let id: String?
 	public let title: String
 	public let carName: String
+	public let brandName: String
 	public let creationDate: Date
 	public let descriptionText: String
 	public let bodyColored: BodyColoredType
 	public let phoneNumber: String
 	public let userName: String
 	public let year: Int16
-	public let priceFrom: Int16
-	public let priceTo: Int16
+	public let priceFrom: Int64
+	public let priceTo: Int64
 	public let favorite: Bool
 	public let contactDescription: String
 	
@@ -28,15 +29,17 @@ public struct CustomerDomainModel {
 							creationDate: Date,
 							descriptionText: String,
 							contactDesc: String,
+							brandName: String,
 							bodyColored: BodyColoredType,
 							phoneNumber: String,
 							userName: String,
-							priceFrom: Int16,
-							priceTo: Int16,
+							priceFrom: Int64,
+							priceTo: Int64,
 							favorite: Bool,
 							year: Int16) {
 		self.id = id
 		self.carName = carName
+		self.brandName = brandName
 		self.creationDate = creationDate
 		self.descriptionText = descriptionText
 		self.bodyColored = bodyColored

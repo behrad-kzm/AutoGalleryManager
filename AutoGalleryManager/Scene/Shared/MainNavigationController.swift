@@ -26,6 +26,7 @@ class MainNavigationController: UINavigationController {
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.setNavigationBarHidden(true, animated: false)
+		interactivePopGestureRecognizer?.isEnabled = false
+    self.setNavigationBarHidden(false, animated: false)
   }
 }

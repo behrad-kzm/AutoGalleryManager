@@ -22,14 +22,26 @@ class Navigator: NSObject {
 		navigationController.popViewController(animated: true)
 	}
 	
-	func toTabbar(withDefaultPresentedController handler: ((UIViewController) -> Void)? = nil) {
-		let sellersNavigationController = LandingListController(navigator: LandingNavigator(navigationController: navigationController), controllerType: .seller)
-		let customersNavigationController = LandingListController(navigator: LandingNavigator(navigationController: navigationController), controllerType: .customer)
+	func toTabbar() {
+			let sellersNavigationController = UINavigationController()
+		let sellerNavigator = LandingNavigator(navigationController: navigationController)
+		let sellersController = LandingListController(controllerType: .seller)
+		sellersController.navigator = sellerNavigator
+		sellersNavigationController.viewControllers = [sellersController]
+		
+			let customersNavigationController = UINavigationController()
+		let customersNavigator = LandingNavigator(navigationController: navigationController)
+		let customersController = LandingListController(controllerType: .customer)
+		customersController.navigator = customersNavigator
+		customersNavigationController.viewControllers = [customersController]
+
 		let tabBarViewController = UITabBarController()
-		sellersNavigationController.tabBarItem = UITabBarItem(title: "Tab_2_Title".localize(), image: UIImage(named: "Tab_2"), tag: 0)
-		customersNavigationController.tabBarItem = UITabBarItem(title: "Tab_1_Title".localize(), image: UIImage(named: "Tab_1"), tag: 0)
-		tabBarViewController.setViewControllers([customersNavigationController, sellersNavigationController].compactMap{$0.makeNavigationController()}, animated: true)
+		sellersController.tabBarItem = UITabBarItem(title: "Tab_2_Title".localize(), image: UIImage(named: "Tab_2"), tag: 0)
+		customersController.tabBarItem = UITabBarItem(title: "Tab_1_Title".localize(), image: UIImage(named: "Tab_1"), tag: 0)
+		
+		tabBarViewController.setViewControllers([sellersController, customersController], animated: true)
 		navigationController.setViewControllers([tabBarViewController], animated: true)
+		navigationController.view.layoutSubviews()
 	}
 	
 	func logError(error: Error, navigatorName name: String, message: String = "Empty".localize()){

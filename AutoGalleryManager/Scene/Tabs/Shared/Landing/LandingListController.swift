@@ -23,9 +23,8 @@ class LandingListController: UIViewController {
 	@IBOutlet weak var searchContainer: UIView!
 	@IBOutlet weak var searchTextField: UITextField!
 	let disposeBag = DisposeBag()
-	var titleLabel: UILabel!
-	init(navigator: LandingNavigator, controllerType: AdvertiseFlatViewModelType) {
-		self.navigator = navigator
+	
+	init( controllerType: AdvertiseFlatViewModelType) {
 		self.controllerType = controllerType
 		super.init(nibName: "LandingListController", bundle: nil)
 	}
@@ -55,15 +54,15 @@ class LandingListController: UIViewController {
 			tableView.removeAll()
 			tableView.reloadData()
 		}
-		tableView.rowHeight = 100.0
 		
 		switch controllerType {
 		case .seller:
-			loadSellerView(filter: searchTextField.text ?? "")
 			setupNavigationBar(titleText: "Tab_2_Title".localize())
+			loadSellerView(filter: searchTextField.text ?? "")
+			
 		default:
-			loadCustomerView(filter: searchTextField.text ?? "")
 			setupNavigationBar(titleText: "Tab_1_Title".localize())
+			loadCustomerView(filter: searchTextField.text ?? "")
 		}
 	}
 	
@@ -78,44 +77,21 @@ class LandingListController: UIViewController {
 	}
 	
 	func setupNavigationBar(titleText: String) {
-		navigationItem.title = .none
-		
-		if #available(iOS 11.0, *) {
-			navigationController?.navigationBar.prefersLargeTitles = true
-			titleLabel = UILabel()
-			titleLabel.text = titleText
-			titleLabel.font = UIFont.getBoldFont(size: 24)
-			titleLabel.translatesAutoresizingMaskIntoConstraints = false
-			titleLabel.textAlignment = .right
-			let targetView = self.navigationController?.navigationBar
-			targetView?.addSubview(titleLabel)
-			titleLabel.anchor(top: nil, left: nil, bottom: targetView?.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 32, paddingBottom: 8, paddingRight: 32, width: view.bounds.width - 32, height: 40)
-			
-			titleLabel.centerXAnchor.constraint(equalTo: (targetView?.centerXAnchor)!).isActive = true
-			
-		} else {
-			// Fallback on earlier versions
-		}
+		let cell = BEKGenericCell<TitleCell>(viewModel: titleText)
+		tableView.push(cell: cell)
 	}
 }
 extension LandingListController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 200
+		if indexPath.row == 0{
+			return 64
+		}
+		return 180
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let cell = tableView.cellForRow(at: indexPath) as? AdvertiseCell{
 			navigator.toDetails(viewModel: cell.vm)
 		}
-	}
-}
-//MARK:- makers
-extension LandingListController {
-	func makeNavigationController() -> UINavigationController{
-		let result = UINavigationController()
-		result.navigationBar.prefersLargeTitles = true
-		result.setNavigationBarHidden(false, animated: false)
-		result.viewControllers = [self]
-		return result
 	}
 }
 

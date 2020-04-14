@@ -10,4 +10,6 @@ import Foundation
 import Domain
 struct SliderVM {
 	let items: [SliderCellItemVM]
+	var navigator: DetailsNavigator? = nil
+	
 }

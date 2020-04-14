@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-AutoGalleryManager/Pods-AutoGalleryManager-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BEKListKit/BEKListKit.framework
 ${BUILT_PRODUCTS_DIR}/BEKMultiCellTable/BEKMultiCellTable.framework
 ${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework
 ${BUILT_PRODUCTS_DIR}/FaveButton/FaveButton.framework
@@ -10,3 +11,4 @@ ${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/Stellar/Stellar.framework
+${BUILT_PRODUCTS_DIR}/SwiftLocalNotification/SwiftLocalNotification.framework

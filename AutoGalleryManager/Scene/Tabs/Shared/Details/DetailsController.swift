@@ -8,7 +8,7 @@
 
 import UIKit
 import BEKMultiCellTable
-
+import BEKMultiCellCollection
 import CoreDataManager
 class DetailsController: UIViewController {
 	
@@ -16,7 +16,6 @@ class DetailsController: UIViewController {
 	@IBOutlet weak var callButtonContainer: UIView!
 	var controllerType: AdvertiseViewModelType
 	var navigator: DetailsNavigator!
-	var titleLabel: UILabel!
 	
 	
 	@IBOutlet weak var tableView: BEKMultiCellTable!
@@ -32,19 +31,15 @@ class DetailsController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		makeUI()
 		view.layoutIfNeeded()
 		view.layoutSubviews()
 		// Do any additional setup after loading the view.
 	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		setupNavigationBar(titleText: controllerType.asViewModel().title)
-	}
+
 	override func viewWillDisappear(_ animated: Bool) {
-		navigationController?.setNavigationBarHidden(true, animated: false)
-		titleLabel.removeFromSuperview()
+
 		super.viewWillDisappear(animated)
 	}
 	@IBAction func callAction(_ sender: Any) {
@@ -69,29 +64,15 @@ class DetailsController: UIViewController {
 	}
 	
 	func setupNavigationBar(titleText: String) {
-		navigationController?.setNavigationBarHidden(false, animated: true)
-		if #available(iOS 11.0, *) {
-			
-			navigationController?.navigationBar.prefersLargeTitles = true
-			titleLabel = UILabel()
-			titleLabel.text = titleText
-			titleLabel.font = UIFont.getBoldFont(size: 24)
-			titleLabel.translatesAutoresizingMaskIntoConstraints = false
-			titleLabel.textAlignment = .right
-			let targetView = self.navigationController?.navigationBar
-			targetView?.addSubview(titleLabel)
-			titleLabel.anchor(top: nil, left: nil, bottom: targetView?.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 32, paddingBottom: 8, paddingRight: 32, width: view.bounds.width - 32, height: 32)
-			
-			titleLabel.centerXAnchor.constraint(equalTo: (targetView?.centerXAnchor)!).isActive = true
-			
-		} else {
-			// Fallback on earlier versions
-		}
+		let cell = BEKGenericCell<TitleCell>(viewModel: titleText)
+		tableView.push(cell: cell)
 	}
+	
 }
 
 extension DetailsController {
 	func makeUI(){
+		setupNavigationBar(titleText: controllerType.asViewModel().title)
 		callLabel.font = UIFont.getBoldFont(size: 15)
 		callLabel.textColor = .white
 		callButtonContainer.layer.cornerRadius = callButtonContainer.bounds.height / 2
@@ -121,9 +102,11 @@ extension DetailsController {
 			CommonInfoVM(title: "BodyColor_Title".localize(), description: viewModel.bodyColored),
 			CommonInfoVM(title: "Year_Title".localize(), description: viewModel.yearModel),
 			CommonInfoVM(title: "Color_Title".localize(), description: viewModel.color),
+			CommonInfoVM(title: "InnerColor_Title".localize(), description: viewModel.innerColor),
 			CommonInfoVM(title: "Kilometer_Title".localize(), description: String(viewModel.kilometer)),
 			CommonInfoVM(title: "Description_Title".localize(), description: viewModel.descriptionText),
-			CommonInfoVM(title: "Price_Title".localize(), description: viewModel.price)
+			CommonInfoVM(title: "Price_Title".localize(), description: viewModel.price),
+			CommonInfoVM(title: "Date_Title".localize(), description: viewModel.creationDateString)
 			//			CommonInfoVM(title: "Date_Title".localize(), description: viewModel.),
 			].forEach { (item) in
 				addInfoCell(model: item)
@@ -135,7 +118,7 @@ extension DetailsController {
 		let priceString = " از " + " \(viewModel.priceFrom) " + "Million".localize() + " تا " + " \(viewModel.priceTo) " + "Million".localize()
 		
 		[
-			
+			CommonInfoVM(title: "Brand_Title".localize(), description: viewModel.brandName),
 			CommonInfoVM(title: "CarName_Title".localize(), description: viewModel.carName),
 			CommonInfoVM(title: "BodyColor_Title".localize(), description: viewModel.bodyColored),
 			CommonInfoVM(title: "Year_Title".localize(), description: viewModel.yearModel),
@@ -182,10 +165,14 @@ extension DetailsController {
 			let viewModelItems = items.compactMap { (model) -> SliderCellItemVM in
 				return  SliderCellItemVM(model: model, editing: false)
 			}
-			let cell = BEKGenericCell<SliderCell>(viewModel: SliderVM(items: viewModelItems))
+			var viewModelSlider = SliderVM(items: viewModelItems)
+			viewModelSlider.navigator = self.navigator
+			let cell = BEKGenericCell<SliderCell>(viewModel: viewModelSlider)
+
 			tableView?.push(cell: cell)
 		}) { (error) in
 			
 		}
+		
 	}
 }

@@ -15,4 +15,9 @@ final class DetailsNavigator: Navigator {
 		let controller = AddNewModelViewController(navigator: self, controllerType: type)
 		navigationController.pushViewController(controller, animated: true)
 	}
+	func toImagePreview(data: Data){
+		let controller = ImagePreviewController(nibName: "ImagePreviewController", bundle: nil)
+		controller.imageData = data
+		navigationController.pushViewController(controller, animated: true)
+	}
 }

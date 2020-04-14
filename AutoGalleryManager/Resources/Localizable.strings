@@ -15,7 +15,7 @@
 "Manual" = "غیر فعال";
 "Model" = "مدل";
 "ContactInfo" = "مشخصات کاربر";
-"Million" = "میلیون تومان";
+"Million" = "تومان";
 "CallWith" = "تماس با";
 "Back" = "بازگشت";
 
@@ -43,9 +43,10 @@
 "Kilometer_Title" = "کارکرد";
 "CarName_Title" = "مدل";
 "Year_Title" = "سال ساخت";
-"Color_Title" = "رنگ";
+"Color_Title" = "رنگ بیرون";
+"InnerColor_Title" = "رنگ داخل";
 "BodyColor_Title" = "وضعیت بدنه";
 "Automatic_Title" = "ستاره‌دار کردن";
 "Price_Title" = "قیمت";
-"Description_Title" = "آپشن ها";
+"Description_Title" = "توضیحات";
 "Date_Title" = "تاریخ ثبت";

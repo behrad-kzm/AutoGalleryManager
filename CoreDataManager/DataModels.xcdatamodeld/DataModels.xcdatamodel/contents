@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CustomerModel" representedClassName="CustomerModel" syncable="YES">
         <attribute name="bodyColored" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="brandName" optional="YES" attributeType="String"/>
         <attribute name="carName" optional="YES" attributeType="String"/>
         <attribute name="contactDescription" optional="YES" attributeType="String"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -9,8 +10,8 @@
         <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <attribute name="priceFrom" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="priceTo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="priceFrom" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="priceTo" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -30,16 +31,17 @@
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
         <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="kilometer" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+        <attribute name="innerColor" optional="YES" attributeType="String"/>
+        <attribute name="kilometer" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="yearModel" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="238"/>
+        <element name="CustomerModel" positionX="-63" positionY="-18" width="128" height="253"/>
         <element name="ImageModel" positionX="-54" positionY="135" width="128" height="88"/>
-        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="268"/>
+        <element name="SellerModel" positionX="-54" positionY="63" width="128" height="283"/>
     </elements>
 </model>

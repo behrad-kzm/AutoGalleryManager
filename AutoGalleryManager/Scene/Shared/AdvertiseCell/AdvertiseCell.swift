@@ -14,7 +14,9 @@ class AdvertiseCell: UITableViewCell {
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var detailLabel: UILabel!
 	@IBOutlet weak var priceLabel: UILabel!
+	@IBOutlet weak var dateLabel: UILabel!
 	
+	@IBOutlet weak var imageHolder: UIView!
 	@IBOutlet weak var imageTitle: UIImageView!
 	@IBOutlet weak var containerView: UIView!
 	@IBOutlet weak var shadowBackgroundView: UIView!
@@ -52,7 +54,11 @@ extension AdvertiseCell: BEKBindableCell {
 				containerView.backgroundColor = .white
 			}
 			priceLabel.textColor = (vm.flat() == .seller) ? .red : .systemGreen
+			if vm.flat() == .customer {
+				imageHolder.isHidden = true
+			}
 			let adViewModel = vm.asViewModel()
+			dateLabel.text = adViewModel.dateString
 			titleLabel.text = adViewModel.title
 			detailLabel.text = adViewModel.subtitle
 			priceLabel.text = adViewModel.price.toFaDigits

@@ -38,6 +38,9 @@
 		136F87B92439DAAF0094A672 /* ImageModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136F87B82439DAAF0094A672 /* ImageModel+CoreDataClass.swift */; };
 		136F87BB2439DACE0094A672 /* ImageModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136F87BA2439DACE0094A672 /* ImageModel+CoreDataProperties.swift */; };
 		136F87BD2439DB010094A672 /* ImageDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136F87BC2439DB010094A672 /* ImageDomainModel.swift */; };
+		13B6C5DF243F7126006BE51D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13B6C5DE243F7126006BE51D /* UIKit.framework */; };
+		13B6C5ED2440F29A006BE51D /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6C5EB2440F29A006BE51D /* ImagePreviewController.swift */; };
+		13B6C5EE2440F29A006BE51D /* ImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B6C5EC2440F29A006BE51D /* ImagePreviewController.xib */; };
 		13BFA454242F7000006B726A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA453242F7000006B726A /* AppDelegate.swift */; };
 		13BFA460242F700D006B726A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BFA45F242F700D006B726A /* Assets.xcassets */; };
 		13BFA485242F7143006B726A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFA482242F7142006B726A /* SplashViewController.swift */; };
@@ -104,7 +107,7 @@
 		13EB90C7243B6A5700A1A47C /* SliderCell+BEKCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90C6243B6A5700A1A47C /* SliderCell+BEKCollection.swift */; };
 		13EB90CA243B8E3D00A1A47C /* SliderCellItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB90C9243B8E3D00A1A47C /* SliderCellItemVM.swift */; };
 		13EB90CB243B97B700A1A47C /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13EB90A0243B260100A1A47C /* test.jpg */; };
-		9AD1985A5799CD7905A2C016 /* Pods_AutoGalleryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E6BE45B5C91B6AD15927EF /* Pods_AutoGalleryManager.framework */; };
+		4CD09D0D2C3AB82E307A1D34 /* Pods_AutoGalleryManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E6BE45B5C91B6AD15927EF /* Pods_AutoGalleryManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +197,9 @@
 		136F87B82439DAAF0094A672 /* ImageModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		136F87BA2439DACE0094A672 /* ImageModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		136F87BC2439DB010094A672 /* ImageDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDomainModel.swift; sourceTree = "<group>"; };
+		13B6C5DE243F7126006BE51D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		13B6C5EB2440F29A006BE51D /* ImagePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewController.swift; sourceTree = "<group>"; };
+		13B6C5EC2440F29A006BE51D /* ImagePreviewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePreviewController.xib; sourceTree = "<group>"; };
 		13BFA450242F7000006B726A /* Autolchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BFA453242F7000006B726A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13BFA45F242F700D006B726A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,7 +295,7 @@
 				131C7AC924309F2E00782708 /* Domain.framework in Frameworks */,
 				131C7AB724309F1A00782708 /* CoreDataManager.framework in Frameworks */,
 				13EB90AE243B633600A1A47C /* BEKMultiCellCollection.framework in Frameworks */,
-				9AD1985A5799CD7905A2C016 /* Pods_AutoGalleryManager.framework in Frameworks */,
+				4CD09D0D2C3AB82E307A1D34 /* Pods_AutoGalleryManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13B6C5DF243F7126006BE51D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +393,15 @@
 			children = (
 			);
 			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		13B6C5E92440F25D006BE51D /* ImagePreview */ = {
+			isa = PBXGroup;
+			children = (
+				13B6C5EB2440F29A006BE51D /* ImagePreviewController.swift */,
+				13B6C5EC2440F29A006BE51D /* ImagePreviewController.xib */,
+			);
+			path = ImagePreview;
 			sourceTree = "<group>";
 		};
 		13BFA447242F7000006B726A = {
@@ -591,6 +607,7 @@
 		13C2D3E12434DC7E00BC6A8B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				13B6C5E92440F25D006BE51D /* ImagePreview */,
 				136F879B24370D700094A672 /* AddItem */,
 				13C2D3E22434DC8500BC6A8B /* Details */,
 				13C2D3C42434987000BC6A8B /* Landing */,
@@ -681,6 +698,7 @@
 		9DF205D1B671D34943629902 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13B6C5DE243F7126006BE51D /* UIKit.framework */,
 				73E6BE45B5C91B6AD15927EF /* Pods_AutoGalleryManager.framework */,
 			);
 			name = Frameworks;
@@ -891,6 +909,7 @@
 				13C2D3DB2434BEAC00BC6A8B /* IRANSans.ttf in Resources */,
 				13C2D3D72434BEAC00BC6A8B /* IRANSans_Bold.ttf in Resources */,
 				13EB90CB243B97B700A1A47C /* test.jpg in Resources */,
+				13B6C5EE2440F29A006BE51D /* ImagePreviewController.xib in Resources */,
 				13BFA4EC242F7FCE006B726A /* SplashSound.mp3 in Resources */,
 				13C2D3CE24349B3700BC6A8B /* TitleCell.xib in Resources */,
 				13BFA4D5242F7533006B726A /* AdvertiseCell.xib in Resources */,
@@ -1014,6 +1033,7 @@
 				13BFA4EA242F7FC9006B726A /* AppSoundEffects.swift in Sources */,
 				13BFA4F1242F89EE006B726A /* SceneDelegate.swift in Sources */,
 				13BFA4C0242F7301006B726A /* AddNewModelViewController.swift in Sources */,
+				13B6C5ED2440F29A006BE51D /* ImagePreviewController.swift in Sources */,
 				13C2D3C324348DF200BC6A8B /* AdvertiseDynamicType.swift in Sources */,
 				13BFA485242F7143006B726A /* SplashViewController.swift in Sources */,
 				13C2D3E72434DD2700BC6A8B /* DetailsController.swift in Sources */,
@@ -1068,10 +1088,11 @@
 		131C7ABA24309F1A00782708 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1083,7 +1104,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.AutoGalleryManager.CoreDataManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi.CoreDataManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1097,10 +1118,11 @@
 		131C7ABB24309F1A00782708 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1112,7 +1134,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.AutoGalleryManager.CoreDataManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi.CoreDataManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1127,10 +1149,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1142,7 +1165,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.AutoGalleryManager.Domain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1158,10 +1181,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1173,7 +1197,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.AutoGalleryManager.Domain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1312,7 +1336,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.AutoGalleryManager;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi;
 				PRODUCT_NAME = Autolchi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1333,7 +1358,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.AutoGalleryManager;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi;
 				PRODUCT_NAME = Autolchi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1345,7 +1371,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1359,9 +1385,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.components.BEKMultiCellCollection;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi.BEKMultiCellCollection;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1375,7 +1403,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7FQDK9Y97S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1389,9 +1417,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bekapps.components.BEKMultiCellCollection;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beksas.autolchi.BEKMultiCellCollection;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

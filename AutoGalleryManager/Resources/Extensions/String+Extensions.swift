@@ -20,7 +20,7 @@ extension String {
 	}
 	
 	var toFaDigits : String {
-		let englishNumbers = ["0": "۰","1": "۱","2": "۲","3": "۳","4": "۴","5": "۵","6": "۶","7": "۷","8": "۸","9": "۰"]
+		let englishNumbers = ["0": "۰","1": "۱","2": "۲","3": "۳","4": "۴","5": "۵","6": "۶","7": "۷","8": "۸","9": "۹"]
 		var txt = self
 		englishNumbers.map { txt = txt.replacingOccurrences(of: $0, with: $1)}
 		return txt
